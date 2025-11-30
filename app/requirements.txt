@@ -1,0 +1,10 @@
+aiohttp
+pandas
+geopandas
+psycopg2-binary
+pydantic
+pydantic-settings
+SQLAlchemy>=1.4
+psycopg2-binary
+geoalchemy2
+beautifulsoup4

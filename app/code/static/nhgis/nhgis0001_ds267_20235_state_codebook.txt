@@ -1,0 +1,325 @@
+--------------------------------------------------------------------------------
+Codebook for NHGIS data file 'nhgis0001_ds267_20235_state'
+--------------------------------------------------------------------------------
+ 
+Contents
+    - Data Summary
+    - Data Dictionary
+    - Citation and Use
+ 
+Additional documentation on NHGIS data sources is available at: 
+    https://www.nhgis.org/documentation/tabular-data 
+ 
+--------------------------------------------------------------------------------
+Data Summary
+--------------------------------------------------------------------------------
+ 
+Year:             2019-2023
+Geographic level: State
+Extent:           All areas
+Dataset:          2023 American Community Survey: 5-Year Data [2019-2023, Block Groups & Larger Areas]
+   NHGIS code:    2019_2023_ACS5a
+   NHGIS ID:      ds267
+Breakdown(s):     Geographic Component:
+                     Total area (00)
+Data type(s):     (E) Estimates
+                  (M) Margins of error
+ 
+Tables:
+ 
+1. Total Population
+   Universe:    Total population
+   Source code: B01003
+   NHGIS code:  ASN1
+ 
+2. Public Assistance Income or Food Stamps/SNAP in the Past 12 Months for Households
+   Universe:    Households
+   Source code: B19058
+   NHGIS code:  ASRA
+ 
+3. Family Size by Cash Public Assistance Income or Households Receiving Food Stamps/SNAP Benefits in the Past 12 Months
+   Universe:    Families
+   Source code: B19123
+   NHGIS code:  ASRO
+ 
+4. Receipt of Food Stamps/SNAP in the Past 12 Months by Disability Status for Households
+   Universe:    Households
+   Source code: B22010
+   NHGIS code:  ASSK
+ 
+5. Tenure by Vehicles Available
+   Universe:    Occupied housing units
+   Source code: B25044
+   NHGIS code:  ASUT
+ 
+6. Allocation of Private Vehicle Occupancy
+   Universe:    Workers 16 years and over
+   Source code: B99082
+   NHGIS code:  ASXS
+ 
+--------------------------------------------------------------------------------
+Data Dictionary
+--------------------------------------------------------------------------------
+ 
+Context Fields 
+        GISJOIN:     GIS Join Match Code
+        YEAR:        Data File Year
+        STUSAB:      State Postal Abbreviation
+        REGIONA:     Region Code
+        DIVISIONA:   Division Code
+        STATE:       State Name
+        STATEA:      State Code
+        COUNTYA:     County Code
+        COUSUBA:     County Subdivision Code
+        PLACEA:      Place/Remainder Code
+        TRACTA:      Census Tract Code
+        BLKGRPA:     Block Group Code
+        CONCITA:     Consolidated City Code
+        AIANHHA:     American Indian Area/Alaska Native Area/Hawaiian Home Land Code
+        RES_ONLYA:   American Indian Area/Alaska Native Area (Reservation or Statistical Entity Only) Code
+        TRUSTA:      American Indian Area (Off-Reservation Trust Land Only)/Hawaiian Home Land Code
+        AIHHTLI:     American Indian/Hawaiian Home Land Trust Land Indicator
+        AITSA:       Tribal Subdivision/Remainder Code
+        ANRCA:       Alaska Native Regional Corporation Code
+        CBSAA:       Metropolitan Statistical Area/Micropolitan Statistical Area Code
+        CSAA:        Combined Statistical Area Code
+        METDIVA:     Metropolitan Division Code
+        CNECTA:      New England City and Town Combined Statistical Area
+        NECTADIV:    New England City and Town Area Division
+        UAA:         Urban Area Code
+        CDCURRA:     Congressional District (2023-2025, 118th Congress) Code
+        SLDUA:       State Legislative District (Upper Chamber) Code
+        SLDLA:       State Legislative District (Lower Chamber) Code
+        ZCTA5A:      5-Digit ZIP Code Tabulation Area Code
+        SUBMCDA:     Subminor Civil Division Code
+        SDELMA:      School District (Elementary)/Remainder Code
+        SDSECA:      School District (Secondary)/Remainder Code
+        SDUNIA:      School District (Unified)/Remainder Code
+        PCI:         Principal City Indicator
+        PUMAA:       Public Use Microdata Area Code
+        GEO_ID:      Census Geographic Area Identifier
+        BTTRA:       Tribal Census Tract Code
+        BTBGA:       Tribal Block Group Code
+        TL_GEO_ID:   TIGER/Line Shapefile Geographic Area Identifier
+ 
+Data Type (E):
+    Estimates
+ 
+        NAME_E:      Area Name
+ 
+    Table 1:     Total Population
+    Universe:    Total population
+    Source code: B01003
+    NHGIS code:  ASN1
+        ASN1E001:    Total
+ 
+    Table 2:     Public Assistance Income or Food Stamps/SNAP in the Past 12 Months for Households
+    Universe:    Households
+    Source code: B19058
+    NHGIS code:  ASRA
+        ASRAE001:    Total
+        ASRAE002:    With cash public assistance or Food Stamps/SNAP
+        ASRAE003:    No cash public assistance or Food Stamps/SNAP
+ 
+    Table 3:     Family Size by Cash Public Assistance Income or Households Receiving Food Stamps/SNAP Benefits in the Past 12 Months
+    Universe:    Families
+    Source code: B19123
+    NHGIS code:  ASRO
+        ASROE001:    Total
+        ASROE002:    With cash public assistance income or households receiving Food Stamps/SNAP benefits in the past 12 months
+        ASROE003:    No cash public assistance income or household Food Stamps/SNAP benefits in the past 12 months
+        ASROE004:    2-person families
+        ASROE005:    2-person families: With cash public assistance income or households receiving Food Stamps/SNAP benefits in the past 12 months
+        ASROE006:    2-person families: No cash public assistance income or household Food Stamps/SNAP benefits in the past 12 months
+        ASROE007:    3-person families
+        ASROE008:    3-person families: With cash public assistance income or households receiving Food Stamps/SNAP benefits in the past 12 months
+        ASROE009:    3-person families: No cash public assistance income or household Food Stamps/SNAP benefits in the past 12 months
+        ASROE010:    4-person families
+        ASROE011:    4-person families: With cash public assistance income or households receiving Food Stamps/SNAP benefits in the past 12 months
+        ASROE012:    4-person families: No cash public assistance income or household Food Stamps/SNAP benefits in the past 12 months
+        ASROE013:    5-person families
+        ASROE014:    5-person families: With cash public assistance income or households receiving Food Stamps/SNAP benefits in the past 12 months
+        ASROE015:    5-person families: No cash public assistance income or household Food Stamps/SNAP benefits in the past 12 months
+        ASROE016:    6-person families
+        ASROE017:    6-person families: With cash public assistance income or households receiving Food Stamps/SNAP benefits in the past 12 months
+        ASROE018:    6-person families: No cash public assistance income or household Food Stamps/SNAP benefits in the past 12 months
+        ASROE019:    7-or-more-person families
+        ASROE020:    7-or-more-person families: With cash public assistance income or households receiving Food Stamps/SNAP benefits in the past 12 months
+        ASROE021:    7-or-more-person families: No cash public assistance income or household Food Stamps/SNAP benefits in the past 12 months
+ 
+    Table 4:     Receipt of Food Stamps/SNAP in the Past 12 Months by Disability Status for Households
+    Universe:    Households
+    Source code: B22010
+    NHGIS code:  ASSK
+        ASSKE001:    Total
+        ASSKE002:    Household received Food Stamps/SNAP in the past 12 months
+        ASSKE003:    Household received Food Stamps/SNAP in the past 12 months: Households with 1 or more persons with a disability
+        ASSKE004:    Household received Food Stamps/SNAP in the past 12 months: Households with no persons with a disability
+        ASSKE005:    Household did not receive Food Stamps/SNAP in the past 12 months
+        ASSKE006:    Household did not receive Food Stamps/SNAP in the past 12 months: Households with 1 or more persons with a disability
+        ASSKE007:    Household did not receive Food Stamps/SNAP in the past 12 months: Households with no persons with a disability
+ 
+    Table 5:     Tenure by Vehicles Available
+    Universe:    Occupied housing units
+    Source code: B25044
+    NHGIS code:  ASUT
+        ASUTE001:    Total
+        ASUTE002:    Owner occupied
+        ASUTE003:    Owner occupied: No vehicle available
+        ASUTE004:    Owner occupied: 1 vehicle available
+        ASUTE005:    Owner occupied: 2 vehicles available
+        ASUTE006:    Owner occupied: 3 vehicles available
+        ASUTE007:    Owner occupied: 4 vehicles available
+        ASUTE008:    Owner occupied: 5 or more vehicles available
+        ASUTE009:    Renter occupied
+        ASUTE010:    Renter occupied: No vehicle available
+        ASUTE011:    Renter occupied: 1 vehicle available
+        ASUTE012:    Renter occupied: 2 vehicles available
+        ASUTE013:    Renter occupied: 3 vehicles available
+        ASUTE014:    Renter occupied: 4 vehicles available
+        ASUTE015:    Renter occupied: 5 or more vehicles available
+ 
+    Table 6:     Allocation of Private Vehicle Occupancy
+    Universe:    Workers 16 years and over
+    Source code: B99082
+    NHGIS code:  ASXS
+        ASXSE001:    Total
+        ASXSE002:    Car, truck, or van
+        ASXSE003:    Car, truck, or van: Allocated
+        ASXSE004:    Car, truck, or van: Not allocated
+        ASXSE005:    Other means (including those who worked from home)
+ 
+Data Type (M):
+    Margins of error
+ 
+        NAME_M:      Area Name
+ 
+    Table 1:     Total Population
+    Universe:    Total population
+    Source code: B01003
+    NHGIS code:  ASN1
+        ASN1M001:    Total
+ 
+    Table 2:     Public Assistance Income or Food Stamps/SNAP in the Past 12 Months for Households
+    Universe:    Households
+    Source code: B19058
+    NHGIS code:  ASRA
+        ASRAM001:    Total
+        ASRAM002:    With cash public assistance or Food Stamps/SNAP
+        ASRAM003:    No cash public assistance or Food Stamps/SNAP
+ 
+    Table 3:     Family Size by Cash Public Assistance Income or Households Receiving Food Stamps/SNAP Benefits in the Past 12 Months
+    Universe:    Families
+    Source code: B19123
+    NHGIS code:  ASRO
+        ASROM001:    Total
+        ASROM002:    With cash public assistance income or households receiving Food Stamps/SNAP benefits in the past 12 months
+        ASROM003:    No cash public assistance income or household Food Stamps/SNAP benefits in the past 12 months
+        ASROM004:    2-person families
+        ASROM005:    2-person families: With cash public assistance income or households receiving Food Stamps/SNAP benefits in the past 12 months
+        ASROM006:    2-person families: No cash public assistance income or household Food Stamps/SNAP benefits in the past 12 months
+        ASROM007:    3-person families
+        ASROM008:    3-person families: With cash public assistance income or households receiving Food Stamps/SNAP benefits in the past 12 months
+        ASROM009:    3-person families: No cash public assistance income or household Food Stamps/SNAP benefits in the past 12 months
+        ASROM010:    4-person families
+        ASROM011:    4-person families: With cash public assistance income or households receiving Food Stamps/SNAP benefits in the past 12 months
+        ASROM012:    4-person families: No cash public assistance income or household Food Stamps/SNAP benefits in the past 12 months
+        ASROM013:    5-person families
+        ASROM014:    5-person families: With cash public assistance income or households receiving Food Stamps/SNAP benefits in the past 12 months
+        ASROM015:    5-person families: No cash public assistance income or household Food Stamps/SNAP benefits in the past 12 months
+        ASROM016:    6-person families
+        ASROM017:    6-person families: With cash public assistance income or households receiving Food Stamps/SNAP benefits in the past 12 months
+        ASROM018:    6-person families: No cash public assistance income or household Food Stamps/SNAP benefits in the past 12 months
+        ASROM019:    7-or-more-person families
+        ASROM020:    7-or-more-person families: With cash public assistance income or households receiving Food Stamps/SNAP benefits in the past 12 months
+        ASROM021:    7-or-more-person families: No cash public assistance income or household Food Stamps/SNAP benefits in the past 12 months
+ 
+    Table 4:     Receipt of Food Stamps/SNAP in the Past 12 Months by Disability Status for Households
+    Universe:    Households
+    Source code: B22010
+    NHGIS code:  ASSK
+        ASSKM001:    Total
+        ASSKM002:    Household received Food Stamps/SNAP in the past 12 months
+        ASSKM003:    Household received Food Stamps/SNAP in the past 12 months: Households with 1 or more persons with a disability
+        ASSKM004:    Household received Food Stamps/SNAP in the past 12 months: Households with no persons with a disability
+        ASSKM005:    Household did not receive Food Stamps/SNAP in the past 12 months
+        ASSKM006:    Household did not receive Food Stamps/SNAP in the past 12 months: Households with 1 or more persons with a disability
+        ASSKM007:    Household did not receive Food Stamps/SNAP in the past 12 months: Households with no persons with a disability
+ 
+    Table 5:     Tenure by Vehicles Available
+    Universe:    Occupied housing units
+    Source code: B25044
+    NHGIS code:  ASUT
+        ASUTM001:    Total
+        ASUTM002:    Owner occupied
+        ASUTM003:    Owner occupied: No vehicle available
+        ASUTM004:    Owner occupied: 1 vehicle available
+        ASUTM005:    Owner occupied: 2 vehicles available
+        ASUTM006:    Owner occupied: 3 vehicles available
+        ASUTM007:    Owner occupied: 4 vehicles available
+        ASUTM008:    Owner occupied: 5 or more vehicles available
+        ASUTM009:    Renter occupied
+        ASUTM010:    Renter occupied: No vehicle available
+        ASUTM011:    Renter occupied: 1 vehicle available
+        ASUTM012:    Renter occupied: 2 vehicles available
+        ASUTM013:    Renter occupied: 3 vehicles available
+        ASUTM014:    Renter occupied: 4 vehicles available
+        ASUTM015:    Renter occupied: 5 or more vehicles available
+ 
+    Table 6:     Allocation of Private Vehicle Occupancy
+    Universe:    Workers 16 years and over
+    Source code: B99082
+    NHGIS code:  ASXS
+        ASXSM001:    Total
+        ASXSM002:    Car, truck, or van
+        ASXSM003:    Car, truck, or van: Allocated
+        ASXSM004:    Car, truck, or van: Not allocated
+        ASXSM005:    Other means (including those who worked from home)
+ 
+--------------------------------------------------------------------------------
+Citation and Use of NHGIS Data
+--------------------------------------------------------------------------------
+ 
+All persons are granted a limited license to use this documentation and the
+accompanying data, subject to the following conditions:
+
+* REDISTRIBUTION: You will not redistribute the data without permission.
+
+  You may publish a subset of the data to meet journal requirements for accessing 
+  data related to a particular publication. Contact us for permission for any other 
+  redistribution; we will consider requests for free and commercial redistribution.
+
+* CITATION: You will cite NHGIS appropriately.
+
+    * Publications and research reports employing NHGIS data (either tabular or GIS) 
+      should include the following citation:
+
+        Jonathan Schroeder, David Van Riper, Steven Manson, Katherine Knowles, Tracy Kugler, Finn Roberts, and Steven Ruggles. 
+        IPUMS National Historical Geographic Information System: Version 20.0 
+        [dataset]. Minneapolis, MN: IPUMS. 2025. 
+        http://doi.org/10.18128/D050.V20.0
+
+    * For policy briefs, online resources, or articles in the popular press, we 
+      recommend that you cite the use of NHGIS data as follows:
+
+        IPUMS NHGIS, University of Minnesota, www.nhgis.org.
+
+These terms of use are a legally binding agreement. You can use the data only in 
+accordance with these terms, and any other use is a violation of the agreement. 
+Violations may result in revocation of the agreement and prohibition from using other 
+IPUMS data. If IPUMS or our partners are harmed from your violation, you are 
+responsible for all damages, including reasonable attorney's fees and expenses.
+        
+In addition, we request that users send us a copy of any publications, research
+reports, or educational material making use of the data or documentation.
+
+Send electronic material to: nhgis@umn.edu
+
+Printed matter should be sent to:
+
+    IPUMS NHGIS
+    Institute for Social Research and Data Innovation
+    University of Minnesota
+    50 Willey Hall
+    225 19th Ave S
+    Minneapolis, MN 55455

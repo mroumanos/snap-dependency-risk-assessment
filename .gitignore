@@ -1,0 +1,4 @@
+.env
+*.csv
+.vscode/*
+*/.ipynb_checkpoints/*
