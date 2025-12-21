@@ -12,12 +12,12 @@ from utils.db import load_into_pg
 logger = logging.getLogger(__name__)
 
 urls = {
-    # 'census_2024_state': {
-    #     'url': 'https://www2.census.gov/geo/tiger/TIGER2024/STATE/tl_2024_us_state.zip'
-    # },
-    # 'census_2024_county': {
-    #     'url': 'https://www2.census.gov/geo/tiger/TIGER2024/COUNTY/tl_2024_us_county.zip'
-    # },
+    'census_2024_state': {
+        'url': 'https://www2.census.gov/geo/tiger/TIGER2024/STATE/tl_2024_us_state.zip'
+    },
+    'census_2024_county': {
+        'url': 'https://www2.census.gov/geo/tiger/TIGER2024/COUNTY/tl_2024_us_county.zip'
+    },
     # 'census_2024_tract': {
     #     'url': 'https://www2.census.gov/geo/tiger/TIGER2024/TRACT/tl_2024_{index:02}_tract.zip',
     #     'index': [i for i in range(1, 79)]
@@ -26,12 +26,12 @@ urls = {
     #     'url': 'https://www2.census.gov/geo/tiger/TIGER2024/BG/tl_2024_{index:02}_bg.zip',
     #     'index': [i for i in range(1, 79)],
     # },
-    'census_cps_fss': {
-        'url': 'https://www2.census.gov/programs-surveys/cps/datasets/20{index}/supp/dec{index}pub.csv',
-        'index': ['19', '20', '21', '22', '23'],
-        'geometry': False,
-        'pandas': True
-    }
+    # 'census_cps_fss': {
+    #     'url': 'https://www2.census.gov/programs-surveys/cps/datasets/20{index}/supp/dec{index}pub.csv',
+    #     'index': ['19', '20', '21', '22', '23'],
+    #     'geometry': False,
+    #     'pandas': True
+    # }
 }
 
 async def fetch_data_from_url(url: str, index: list = None) -> gpd.GeoDataFrame:

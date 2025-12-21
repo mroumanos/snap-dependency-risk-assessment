@@ -45,7 +45,8 @@ sources = {
     'acs_2023_county': {
         'file': [
             'static/nhgis/nhgis0001_ds267_20235_county.csv',
-            'static/nhgis/nhgis0004_ds267_20235_county.csv'
+            'static/nhgis/nhgis0004_ds267_20235_county.csv',
+            'static/nhgis/nhgis0008_ds268_20235_county.csv'
         ]
     },
     'acs_2023_blkgrp': {

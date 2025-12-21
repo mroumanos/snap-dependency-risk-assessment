@@ -1,0 +1,236 @@
+--------------------------------------------------------------------------------
+Codebook for NHGIS data file 'nhgis0008_ds268_20235_county'
+--------------------------------------------------------------------------------
+ 
+Contents
+    - Data Summary
+    - Data Dictionary
+    - Citation and Use
+ 
+Additional documentation on NHGIS data sources is available at: 
+    https://www.nhgis.org/documentation/tabular-data 
+ 
+--------------------------------------------------------------------------------
+Data Summary
+--------------------------------------------------------------------------------
+ 
+Year:             2019-2023
+Geographic level: County (by State)
+Extent:           All areas
+Dataset:          2023 American Community Survey: 5-Year Data [2019-2023, Tracts & Larger Areas]
+   NHGIS code:    2019_2023_ACS5b
+   NHGIS ID:      ds268
+Breakdown(s):     Geographic Component:
+                     Total area (00)
+Data type(s):     (E) Estimates
+                  (M) Margins of error
+ 
+Tables:
+ 
+1. Poverty Status in the Past 12 Months by School Enrollment by Level of School for the Population 3 Years and Over
+   Universe:    Population 3 years and over for whom poverty status is determined
+   Source code: B14006
+   NHGIS code:  AS50
+ 
+2. Poverty Status in the Past 12 Months by Age
+   Universe:    Population for whom poverty status is determined
+   Source code: B17020
+   NHGIS code:  AS7T
+ 
+--------------------------------------------------------------------------------
+Data Dictionary
+--------------------------------------------------------------------------------
+ 
+Context Fields 
+        GISJOIN:     GIS Join Match Code
+        YEAR:        Data File Year
+        STUSAB:      State Postal Abbreviation
+        REGIONA:     Region Code
+        DIVISIONA:   Division Code
+        STATE:       State Name
+        STATEA:      State Code
+        COUNTY:      County Name
+        COUNTYA:     County Code
+        COUSUBA:     County Subdivision Code
+        PLACEA:      Place Code
+        TRACTA:      Census Tract Code
+        CONCITA:     Consolidated City Code
+        AIANHHA:     American Indian Area/Alaska Native Area/Hawaiian Home Land Code
+        RES_ONLYA:   American Indian Area/Alaska Native Area (Reservation or Statistical Entity Only) Code
+        TRUSTA:      American Indian Area (Off-Reservation Trust Land Only)/Hawaiian Home Land Code
+        AIHHTLI:     American Indian/Hawaiian Home Land Trust Land Indicator
+        AITSA:       Tribal Subdivision/Remainder Code
+        ANRCA:       Alaska Native Regional Corporation Code
+        CBSAA:       Metropolitan Statistical Area/Micropolitan Statistical Area Code
+        CSAA:        Combined Statistical Area Code
+        METDIVA:     Metropolitan Division Code
+        CNECTA:      New England City and Town Combined Statistical Area
+        NECTADIV:    New England City and Town Area Division
+        UAA:         Urban Area Code
+        CDCURRA:     Congressional District (2023-2025, 118th Congress) Code
+        SLDUA:       State Legislative District (Upper Chamber) Code
+        SLDLA:       State Legislative District (Lower Chamber) Code
+        ZCTA5A:      5-Digit ZIP Code Tabulation Area Code
+        SUBMCDA:     Subminor Civil Division Code
+        SDELMA:      School District (Elementary)/Remainder Code
+        SDSECA:      School District (Secondary)/Remainder Code
+        SDUNIA:      School District (Unified)/Remainder Code
+        PCI:         Principal City Indicator
+        PUMAA:       Public Use Microdata Area Code
+        GEO_ID:      Census Geographic Area Identifier
+        BTTRA:       Tribal Census Tract Code
+        TL_GEO_ID:   TIGER/Line Shapefile Geographic Area Identifier
+ 
+Data Type (E):
+    Estimates
+ 
+        NAME_E:      Area Name
+ 
+    Table 1:     Poverty Status in the Past 12 Months by School Enrollment by Level of School for the Population 3 Years and Over
+    Universe:    Population 3 years and over for whom poverty status is determined
+    Source code: B14006
+    NHGIS code:  AS50
+        AS50E001:    Total
+        AS50E002:    Income in the past 12 months below the poverty level
+        AS50E003:    Income in the past 12 months below the poverty level: Enrolled in school
+        AS50E004:    Income in the past 12 months below the poverty level: Enrolled in school: Enrolled in nursery school, preschool
+        AS50E005:    Income in the past 12 months below the poverty level: Enrolled in school: Enrolled in kindergarten
+        AS50E006:    Income in the past 12 months below the poverty level: Enrolled in school: Enrolled in grade 1 to grade 4
+        AS50E007:    Income in the past 12 months below the poverty level: Enrolled in school: Enrolled in grade 5 to grade 8
+        AS50E008:    Income in the past 12 months below the poverty level: Enrolled in school: Enrolled in grade 9 to grade 12
+        AS50E009:    Income in the past 12 months below the poverty level: Enrolled in school: Enrolled in college undergraduate years
+        AS50E010:    Income in the past 12 months below the poverty level: Enrolled in school: Enrolled in graduate or professional school
+        AS50E011:    Income in the past 12 months below the poverty level: Not enrolled in school
+        AS50E012:    Income in the past 12 months at or above the poverty level
+        AS50E013:    Income in the past 12 months at or above the poverty level: Enrolled in school
+        AS50E014:    Income in the past 12 months at or above the poverty level: Enrolled in school: Enrolled in nursery school, preschool
+        AS50E015:    Income in the past 12 months at or above the poverty level: Enrolled in school: Enrolled in kindergarten
+        AS50E016:    Income in the past 12 months at or above the poverty level: Enrolled in school: Enrolled in grade 1 to grade 4
+        AS50E017:    Income in the past 12 months at or above the poverty level: Enrolled in school: Enrolled in grade 5 to grade 8
+        AS50E018:    Income in the past 12 months at or above the poverty level: Enrolled in school: Enrolled in grade 9 to grade 12
+        AS50E019:    Income in the past 12 months at or above the poverty level: Enrolled in school: Enrolled in college undergraduate years
+        AS50E020:    Income in the past 12 months at or above the poverty level: Enrolled in school: Enrolled in graduate or professional school
+        AS50E021:    Income in the past 12 months at or above the poverty level: Not enrolled in school
+ 
+    Table 2:     Poverty Status in the Past 12 Months by Age
+    Universe:    Population for whom poverty status is determined
+    Source code: B17020
+    NHGIS code:  AS7T
+        AS7TE001:    Total
+        AS7TE002:    Income in the past 12 months below poverty level
+        AS7TE003:    Income in the past 12 months below poverty level: Under 6 years
+        AS7TE004:    Income in the past 12 months below poverty level: 6 to 11 years
+        AS7TE005:    Income in the past 12 months below poverty level: 12 to 17 years
+        AS7TE006:    Income in the past 12 months below poverty level: 18 to 59 years
+        AS7TE007:    Income in the past 12 months below poverty level: 60 to 74 years
+        AS7TE008:    Income in the past 12 months below poverty level: 75 to 84 years
+        AS7TE009:    Income in the past 12 months below poverty level: 85 years and over
+        AS7TE010:    Income in the past 12 months at or above poverty level
+        AS7TE011:    Income in the past 12 months at or above poverty level: Under 6 years
+        AS7TE012:    Income in the past 12 months at or above poverty level: 6 to 11 years
+        AS7TE013:    Income in the past 12 months at or above poverty level: 12 to 17 years
+        AS7TE014:    Income in the past 12 months at or above poverty level: 18 to 59 years
+        AS7TE015:    Income in the past 12 months at or above poverty level: 60 to 74 years
+        AS7TE016:    Income in the past 12 months at or above poverty level: 75 to 84 years
+        AS7TE017:    Income in the past 12 months at or above poverty level: 85 years and over
+ 
+Data Type (M):
+    Margins of error
+ 
+        NAME_M:      Area Name
+ 
+    Table 1:     Poverty Status in the Past 12 Months by School Enrollment by Level of School for the Population 3 Years and Over
+    Universe:    Population 3 years and over for whom poverty status is determined
+    Source code: B14006
+    NHGIS code:  AS50
+        AS50M001:    Total
+        AS50M002:    Income in the past 12 months below the poverty level
+        AS50M003:    Income in the past 12 months below the poverty level: Enrolled in school
+        AS50M004:    Income in the past 12 months below the poverty level: Enrolled in school: Enrolled in nursery school, preschool
+        AS50M005:    Income in the past 12 months below the poverty level: Enrolled in school: Enrolled in kindergarten
+        AS50M006:    Income in the past 12 months below the poverty level: Enrolled in school: Enrolled in grade 1 to grade 4
+        AS50M007:    Income in the past 12 months below the poverty level: Enrolled in school: Enrolled in grade 5 to grade 8
+        AS50M008:    Income in the past 12 months below the poverty level: Enrolled in school: Enrolled in grade 9 to grade 12
+        AS50M009:    Income in the past 12 months below the poverty level: Enrolled in school: Enrolled in college undergraduate years
+        AS50M010:    Income in the past 12 months below the poverty level: Enrolled in school: Enrolled in graduate or professional school
+        AS50M011:    Income in the past 12 months below the poverty level: Not enrolled in school
+        AS50M012:    Income in the past 12 months at or above the poverty level
+        AS50M013:    Income in the past 12 months at or above the poverty level: Enrolled in school
+        AS50M014:    Income in the past 12 months at or above the poverty level: Enrolled in school: Enrolled in nursery school, preschool
+        AS50M015:    Income in the past 12 months at or above the poverty level: Enrolled in school: Enrolled in kindergarten
+        AS50M016:    Income in the past 12 months at or above the poverty level: Enrolled in school: Enrolled in grade 1 to grade 4
+        AS50M017:    Income in the past 12 months at or above the poverty level: Enrolled in school: Enrolled in grade 5 to grade 8
+        AS50M018:    Income in the past 12 months at or above the poverty level: Enrolled in school: Enrolled in grade 9 to grade 12
+        AS50M019:    Income in the past 12 months at or above the poverty level: Enrolled in school: Enrolled in college undergraduate years
+        AS50M020:    Income in the past 12 months at or above the poverty level: Enrolled in school: Enrolled in graduate or professional school
+        AS50M021:    Income in the past 12 months at or above the poverty level: Not enrolled in school
+ 
+    Table 2:     Poverty Status in the Past 12 Months by Age
+    Universe:    Population for whom poverty status is determined
+    Source code: B17020
+    NHGIS code:  AS7T
+        AS7TM001:    Total
+        AS7TM002:    Income in the past 12 months below poverty level
+        AS7TM003:    Income in the past 12 months below poverty level: Under 6 years
+        AS7TM004:    Income in the past 12 months below poverty level: 6 to 11 years
+        AS7TM005:    Income in the past 12 months below poverty level: 12 to 17 years
+        AS7TM006:    Income in the past 12 months below poverty level: 18 to 59 years
+        AS7TM007:    Income in the past 12 months below poverty level: 60 to 74 years
+        AS7TM008:    Income in the past 12 months below poverty level: 75 to 84 years
+        AS7TM009:    Income in the past 12 months below poverty level: 85 years and over
+        AS7TM010:    Income in the past 12 months at or above poverty level
+        AS7TM011:    Income in the past 12 months at or above poverty level: Under 6 years
+        AS7TM012:    Income in the past 12 months at or above poverty level: 6 to 11 years
+        AS7TM013:    Income in the past 12 months at or above poverty level: 12 to 17 years
+        AS7TM014:    Income in the past 12 months at or above poverty level: 18 to 59 years
+        AS7TM015:    Income in the past 12 months at or above poverty level: 60 to 74 years
+        AS7TM016:    Income in the past 12 months at or above poverty level: 75 to 84 years
+        AS7TM017:    Income in the past 12 months at or above poverty level: 85 years and over
+ 
+--------------------------------------------------------------------------------
+Citation and Use of NHGIS Data
+--------------------------------------------------------------------------------
+ 
+All persons are granted a limited license to use this documentation and the
+accompanying data, subject to the following conditions:
+
+* REDISTRIBUTION: You will not redistribute the data without permission.
+
+  You may publish a subset of the data to meet journal requirements for accessing 
+  data related to a particular publication. Contact us for permission for any other 
+  redistribution; we will consider requests for free and commercial redistribution.
+
+* CITATION: You will cite NHGIS appropriately.
+
+    * Publications and research reports employing NHGIS data (either tabular or GIS) 
+      should include the following citation:
+
+        Jonathan Schroeder, David Van Riper, Steven Manson, Katherine Knowles, Tracy Kugler, Finn Roberts, and Steven Ruggles. 
+        IPUMS National Historical Geographic Information System: Version 20.0 
+        [dataset]. Minneapolis, MN: IPUMS. 2025. 
+        http://doi.org/10.18128/D050.V20.0
+
+    * For policy briefs, online resources, or articles in the popular press, we 
+      recommend that you cite the use of NHGIS data as follows:
+
+        IPUMS NHGIS, University of Minnesota, www.nhgis.org.
+
+These terms of use are a legally binding agreement. You can use the data only in 
+accordance with these terms, and any other use is a violation of the agreement. 
+Violations may result in revocation of the agreement and prohibition from using other 
+IPUMS data. If IPUMS or our partners are harmed from your violation, you are 
+responsible for all damages, including reasonable attorney's fees and expenses.
+        
+In addition, we request that users send us a copy of any publications, research
+reports, or educational material making use of the data or documentation.
+
+Send electronic material to: nhgis@umn.edu
+
+Printed matter should be sent to:
+
+    IPUMS NHGIS
+    Institute for Social Research and Data Innovation
+    University of Minnesota
+    50 Willey Hall
+    225 19th Ave S
+    Minneapolis, MN 55455

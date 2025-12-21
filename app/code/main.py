@@ -17,12 +17,12 @@ async def main():
     """Main function to orchestrate ETL operations"""
     try:
         # await run_feeding_america_etl()
-        await run_census_etl()
+        # await run_census_etl()
         # await run_why_hungry_etl()
         # await run_access_food_etl()
         # await run_capital_food_bank_etl()
         # await run_md_food_bank_etl()
-        # await run_nhgis_etl()
+        await run_nhgis_etl()
         
     except Exception as e:
         logger.error(f"Error during ETL process: {e}")
