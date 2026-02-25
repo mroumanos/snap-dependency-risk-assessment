@@ -1,15 +1,17 @@
 .env
-*.csv
 .vscode/*
 
 # Jupyter notebook checkpoints
 */.ipynb_checkpoints/*
+notebooks/*.csv
 
 # Python cache files
 **/__pycache__/**
 
 # output data file folders
 **/output/**.csv
+app/code/static/nhgis/**/*.csv
+
 
 # any lingering data files
 *.jsonl
