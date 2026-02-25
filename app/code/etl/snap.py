@@ -1,7 +1,10 @@
+"""SNAP retailer ETL.
+
+Downloads SNAP retailer features from ArcGIS Hub as GeoJSON and loads
+the result into `snap_retailers_raw`.
+"""
+
 from settings.geo import geo_settings
-from settings.db import postgres_settings
-from sqlalchemy import create_engine
-from datetime import datetime
 import logging
 import aiohttp
 import geopandas as gpd
@@ -14,6 +17,7 @@ async def fetch_snap_retailers(
         fmt: str = 'geojson',
         crs: int = geo_settings.crs
 ):
+    """Fetch SNAP retailer features and return a GeoDataFrame."""
     url = f'https://hub.arcgis.com/api/v3/datasets/8b260f9a10b0459aa441ad8588c2251c_0/downloads/data?format={fmt}&spatialRefId={crs}&where=1=1'
 
     try:
@@ -29,7 +33,7 @@ async def fetch_snap_retailers(
 
 
 async def run():
-    """Run the full ETL process for SNAP retailers"""
+    """Execute full SNAP retailer ingestion into PostGIS."""
     logger.info("Starting SNAP ETL process...")
     
     # Fetch all SNAP retailers from API

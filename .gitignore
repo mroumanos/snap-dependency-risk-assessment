@@ -1,4 +1,26 @@
 .env
 *.csv
 .vscode/*
+
+# Jupyter notebook checkpoints
 */.ipynb_checkpoints/*
+
+# Python cache files
+**/__pycache__/**
+
+# output data file folders
+**/output/**
+
+# any lingering data files
+*.jsonl
+*.txt
+*.csv
+
+# any SQL files
+*.sql
+
+# any backup files
+**/backup/**
+
+# DS Store
+.DS_Store

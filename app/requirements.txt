@@ -8,3 +8,10 @@ SQLAlchemy>=1.4
 psycopg2-binary
 geoalchemy2
 beautifulsoup4
+scrapy>=2.13,<3
+pydantic>=2.6,<3
+h2>=4,<5
+usaddress>=0.5,<1
+cryptography>=43,<45
+xlrd>=2.0,<3
+openpyxl>=3.0,<4

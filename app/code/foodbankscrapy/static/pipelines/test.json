@@ -1,0 +1,42 @@
+[
+  {
+    "mailAddressState": "GA",
+    "mailAddressCity": "Valdosta",
+    "mailAddressZip": "31601",
+    "mailAddressLatitude": "30.782005",
+    "mailAddressLongitude": "-83.287677",
+    "entityId": "179",
+    "organizationId": "291",
+    "fullName": "Second Harvest of South Georgia",
+    "agencyUrl": "https://feedingsga.org/find-help/",
+    "url": "feedingsga.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://locatestore.com/x-eHTh"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "html",
+        "xpath": "//div[@id='root']/following::script[contains(., 'window._stores')][1]/text()"
+      },
+      {
+        "name": "regex",
+        "regex": "window\\._stores\\s*=\\s*(\\{[\\s\\S]*\\})\\s*;",
+        "regex_flags": "s",
+        "regex_group": 1
+      },
+      {
+        "name": "json"
+      },
+      {
+        "name": "json_path",
+        "path": [
+          "features"
+        ]
+      }
+    ]
+  }
+]

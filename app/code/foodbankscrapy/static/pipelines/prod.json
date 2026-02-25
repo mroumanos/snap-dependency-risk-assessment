@@ -1,0 +1,2915 @@
+[
+  {
+    "mailAddressState": "US",
+    "mailAddressCity": "N/A",
+    "mailAddressZip": "N/A",
+    "mailAddressLatitude": "N/A",
+    "mailAddressLongitude": "N/A",
+    "entityId": "AccessFood",
+    "organizationId": "1001",
+    "fullName": "AccessFood Full Scrape",
+    "agencyUrl": "https://api.accessfood.org",
+    "url": "https://api.accessfood.org/api",
+    "generator": {
+      "name": "default",
+      "source": "https://api.accessfood.org/api/MapInformation/LocationSearch",
+      "params": {
+        "radius": 3900,
+        "lat": 39.8283,
+        "lng": -98.5795,
+        "regionId": 1,
+        "regionMapId": 1,
+        "showOutOfNetwork": 1,
+        "includeLocationOperatingHours": "true",
+        "isMapV2": "true"
+      }
+    },
+    "evaluator": {
+      "name": "accessfood_pagination"
+    },
+    "parser": [
+      {
+        "name": "json"
+      },
+      {
+        "name": "json_path",
+        "path": [
+          "item1"
+        ]
+      }
+    ]
+  },
+  {
+    "mailAddressState": "US",
+    "mailAddressCity": "N/A",
+    "mailAddressZip": "N/A",
+    "mailAddressLatitude": "N/A",
+    "mailAddressLongitude": "N/A",
+    "entityId": "FreshTrak",
+    "organizationId": "1002",
+    "fullName": "FreshTrak Full Scrape",
+    "agencyUrl": "https://pantry-finder-api.freshtrak.com",
+    "url": "https://pantry-finder-api.freshtrak.com/api/agencies",
+    "generator": {
+      "name": "zip_iterator",
+      "source": "https://pantry-finder-api.freshtrak.com/api/agencies",
+      "request_method": "GET",
+      "states": [
+        "OH",
+        "PA",
+        "TX"
+      ],
+      "zip_param": "zip_code",
+      "params": {
+        "distance": "200"
+      }
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      },
+      {
+        "name": "json_path",
+        "path": [
+          "agencies"
+        ]
+      },
+      {
+        "name": "unpack_json",
+        "key": "events"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "ME",
+    "mailAddressCity": "N/A",
+    "mailAddressZip": "N/A",
+    "mailAddressLatitude": "N/A",
+    "mailAddressLongitude": "N/A",
+    "entityId": "N/A",
+    "organizationId": "1003",
+    "fullName": "Maine ArcGIS Scraper",
+    "agencyUrl": "https://services1.arcgis.com/RbMX0mRVOFNTdLzd/ArcGIS/rest/services/MealSites/FeatureServer",
+    "url": "https://services1.arcgis.com/RbMX0mRVOFNTdLzd/ArcGIS/rest/services/MealSites/FeatureServer",
+    "generator": {
+      "name": "default",
+      "source": "https://services1.arcgis.com/RbMX0mRVOFNTdLzd/ArcGIS/rest/services/MealSites/FeatureServer/0/query?f=json&returnGeometry=true&spatialRel=esriSpatialRelIntersects&outFields=*&where=1%3D1&outSR=4326"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": "arcgis"
+  },
+  {
+    "mailAddressState": "AL",
+    "mailAddressCity": "N/A",
+    "mailAddressZip": "N/A",
+    "mailAddressLatitude": "N/A",
+    "mailAddressLongitude": "N/A",
+    "entityId": "N/A",
+    "organizationId": "1004",
+    "fullName": "Alabama ArcGIS Scraper",
+    "agencyUrl": "https://services1.arcgis.com/RbMX0mRVOFNTdLzd/ArcGIS/rest/services/MealSites/FeatureServer",
+    "url": "https://services1.arcgis.com/RbMX0mRVOFNTdLzd/ArcGIS/rest/services/MealSites/FeatureServer",
+    "generator": {
+      "name": "default",
+      "source": [
+        "https://services3.arcgis.com/VwWV2PI7YPnFhao3/ArcGIS/rest/services/Alabama_Food_Banks___Agency_List___Locations_List/FeatureServer/0/query?f=json&returnGeometry=true&spatialRel=esriSpatialRelIntersects&outFields=*&where=1%3D1&outSR=4326",
+        "https://services3.arcgis.com/VwWV2PI7YPnFhao3/ArcGIS/rest/services/HAFB_Active_Pantries/FeatureServer/0/query?f=json&returnGeometry=true&spatialRel=esriSpatialRelIntersects&outFields=*&where=1%3D1&outSR=4326",
+        "https://services3.arcgis.com/VwWV2PI7YPnFhao3/ArcGIS/rest/services/MS_Food_Pantries/FeatureServer//0/query?f=json&returnGeometry=true&spatialRel=esriSpatialRelIntersects&outFields=*&where=1%3D1&outSR=4326"
+      ]
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": "arcgis"
+  },
+  {
+    "mailAddressState": "MS/LA",
+    "mailAddressCity": "N/A",
+    "mailAddressZip": "N/A",
+    "mailAddressLatitude": "N/A",
+    "mailAddressLongitude": "N/A",
+    "entityId": "N/A",
+    "organizationId": "1005",
+    "fullName": "MS + AL WP Scraper",
+    "agencyUrl": "https://foodbank.org/",
+    "url": "https://foodbank.org/",
+    "generator": {
+      "name": "default",
+      "source": [
+        "https://foodbank.org/wp-admin/admin-ajax.php?action=store_search&lat=42.3555076&lng=-71.0565364&max_results=100&search_radius=500&filter=171"
+      ]
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "N/A",
+    "mailAddressCity": "N/A",
+    "mailAddressZip": "N/A",
+    "mailAddressLatitude": "N/A",
+    "mailAddressLongitude": "N/A",
+    "entityId": "N/A",
+    "organizationId": "1006",
+    "fullName": "Why Hunger Scraper",
+    "agencyUrl": "https://networks.whyhunger.org",
+    "url": "https://networks.whyhunger.org",
+    "generator": {
+      "name": "default",
+      "source": "https://networks.whyhunger.org",
+      "params": {
+        "s": 1,
+        "s_f": "id",
+        "s_o": "desc",
+        "center_zip": 66952,
+        "radius_quantity": 3959,
+        "country_id": 2,
+        "page": 1,
+        "distance": 5000
+      }
+    },
+    "evaluator": {
+      "name": "whyhunger_pagination"
+    },
+    "parser": [
+      {
+        "name": "whyhunger"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "N/A",
+    "mailAddressCity": "N/A",
+    "mailAddressZip": "N/A",
+    "mailAddressLatitude": "N/A",
+    "mailAddressLongitude": "N/A",
+    "entityId": "N/A",
+    "organizationId": "1007",
+    "fullName": "The Food Pantries Org Scraper",
+    "agencyUrl": "https://thefoodpantries.org/",
+    "url": "https://thefoodpantries.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://map.thefoodpantries.org/"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "html",
+        "css": "container",
+        "attr": "resource-data"
+      },
+      {
+        "name": "json"
+      },
+      {
+        "name": "json_path",
+        "path": []
+      },
+      {
+        "name": "unpack_json",
+        "key": "features",
+        "include_parent": false,
+        "include_children": true
+      },
+      {
+        "name": "json_path",
+        "path": [
+          "properties"
+        ]
+      }
+    ]
+  },
+  {
+    "mailAddressState": "N/A",
+    "mailAddressCity": "N/A",
+    "mailAddressZip": "N/A",
+    "mailAddressLatitude": "N/A",
+    "mailAddressLongitude": "N/A",
+    "entityId": "N/A",
+    "organizationId": "1008",
+    "fullName": "Food Finder US Scraper",
+    "agencyUrl": "https://foodfinder.us/",
+    "url": "https://foodfinder.us/",
+    "generator": {
+      "name": "bbox_search",
+      "source": "https://api-v2-prod-dot-foodfinder-183216.uc.r.appspot.com/portal/tags",
+      "states": [
+        "AL",
+        "AK",
+        "AZ",
+        "AR",
+        "CA",
+        "CO",
+        "CT",
+        "DC",
+        "DE",
+        "FL",
+        "GA",
+        "HI",
+        "IA",
+        "ID",
+        "IL",
+        "IN",
+        "KS",
+        "KY",
+        "LA",
+        "MA",
+        "MD",
+        "ME",
+        "MI",
+        "MN",
+        "MO",
+        "MS",
+        "MT",
+        "NC",
+        "ND",
+        "NE",
+        "NH",
+        "NJ",
+        "NM",
+        "NV",
+        "NY",
+        "OH",
+        "OK",
+        "OR",
+        "PA",
+        "PR",
+        "RI",
+        "SC",
+        "SD",
+        "TN",
+        "TX",
+        "UT",
+        "VA",
+        "VT",
+        "WA",
+        "WI",
+        "WV",
+        "WY"
+      ],
+      "bbox_width_miles": 100,
+      "bbox_height_miles": 100,
+      "bbox_overlap_miles": 0,
+      "refresh_time_per_request": true,
+      "time_param": "_time",
+      "params": {
+        "portal": "0"
+      },
+      "headers": {
+        "Host": "api-v2-prod-dot-foodfinder-183216.uc.r.appspot.com",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:147.0) Gecko/20100101 Firefox/147.0",
+        "Accept": "*/*",
+        "Accept-Language": "en-US,en;q=0.9",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Referer": "https://foodfinder-prod-dot-foodfinder-183216.uc.r.appspot.com/",
+        "Origin": "https://foodfinder-prod-dot-foodfinder-183216.uc.r.appspot.com",
+        "Connection": "keep-alive"
+      }
+    },
+    "evaluator": {
+      "name": "foodfinder_bbox_split",
+      "cap_size": 300,
+      "max_split_depth": 12,
+      "min_lat_span": 0.01,
+      "min_lon_span": 0.01,
+      "refresh_time_per_request": true,
+      "time_param": "_time"
+    },
+    "parser": [
+      {
+        "name": "foodfinder_decrypt",
+        "timestamp_param": "_time",
+        "cap_size": 300,
+        "fail_on_cap": true
+      },
+      {
+        "name": "json"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "NH",
+    "mailAddressCity": "Manchester",
+    "mailAddressZip": "3109",
+    "mailAddressLatitude": "42.979369",
+    "mailAddressLongitude": "-71.409718",
+    "entityId": "129",
+    "organizationId": "161",
+    "fullName": "New Hampshire Food Bank",
+    "agencyUrl": "https://nhfoodbank.org/need-food/",
+    "url": "nhfoodbank.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://nhfoodbank.org/find-food/food-map/"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "html",
+        "id": "storelocator-script-js-before"
+      },
+      {
+        "name": "regex",
+        "regex": "bhStoreLocatorLocations\\s*=\\s*(\\[.*?\\]);",
+        "regex_flags": "s",
+        "regex_group": null
+      },
+      {
+        "name": "json"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "GA",
+    "mailAddressCity": "Macon",
+    "mailAddressZip": "31217",
+    "mailAddressLatitude": "32.80525",
+    "mailAddressLongitude": "-83.566789",
+    "entityId": "127",
+    "organizationId": "159",
+    "fullName": "Middle Georgia Community Food Bank",
+    "agencyUrl": "https://mgcfb.org/find-healthy-food/",
+    "url": "mgcfb.org/",
+    "generator": {
+      "name": "default",
+      "use_realistic_headers": true,
+      "max_retry_times": 5,
+      "source": "https://www.google.com/maps/d/viewer?mid=1urkMjTiFRq9wS_58A2BRzLjsLiAoTV8"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "html",
+        "xpath": "//script[@nonce][contains(., '_pageData')][1]/text()"
+      },
+      {
+        "name": "regex",
+        "regex": "var\\s+_pageData\\s*=\\s*\"([\\s\\S]*?)\";",
+        "regex_flags": "s",
+        "regex_group": null
+      },
+      {
+        "name": "json"
+      },
+      {
+        "name": "mymaps"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "MN",
+    "mailAddressCity": "East Grand Forks",
+    "mailAddressZip": "56721",
+    "mailAddressLatitude": "47.935378",
+    "mailAddressLongitude": "-96.999493",
+    "entityId": "103",
+    "organizationId": "119",
+    "fullName": "North Country Food Bank, Inc.",
+    "agencyUrl": "https://www.hungersolutions.org/find-help/",
+    "url": "www.northcountryfoodbank.org/",
+    "generator": {
+      "name": "default",
+      "use_minimal_headers": true,
+      "source": "https://www.hungersolutions.org/find-help/"
+    },
+    "evaluator": {
+      "name": "fwp_pagination",
+      "param": "fwp_paged"
+    },
+    "parser": [
+      {
+        "name": "html",
+        "css": "script:not([src])::text"
+      },
+      {
+        "name": "regex",
+        "regex": "window\\.FWP_JSON\\s*=\\s*(\\{[\\s\\S]*?\\});",
+        "regex_flags": "s",
+        "regex_group": null
+      },
+      {
+        "name": "json"
+      },
+      {
+        "name": "json_path",
+        "json_path": [
+          "preload_data",
+          "settings",
+          "map",
+          "locations"
+        ]
+      }
+    ]
+  },
+  {
+    "mailAddressState": "MI",
+    "mailAddressCity": "Detroit",
+    "mailAddressZip": "48207",
+    "mailAddressLatitude": "42.353997",
+    "mailAddressLongitude": "-83.013971",
+    "entityId": "26",
+    "organizationId": "27",
+    "fullName": "Gleaners Community Food Bank of Southeastern Michigan",
+    "agencyUrl": "https://www.gcfb.org/mobiles",
+    "url": "www.gcfb.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://pantrynet.org/"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "html",
+        "xpath": "//div[@id='map-modal']/following-sibling::script[1]/text()"
+      },
+      {
+        "name": "regex",
+        "regex": "var\\s+locationCache\\s*=\\s*(\\[[\\s\\S]*?\\])\\s*;",
+        "regex_flags": "s"
+      },
+      {
+        "name": "json"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "NC",
+    "mailAddressCity": "Charlotte",
+    "mailAddressZip": "28206",
+    "mailAddressLatitude": "35.238643",
+    "mailAddressLongitude": "-80.837596",
+    "entityId": "13",
+    "organizationId": "14",
+    "fullName": "Second Harvest Food Bank of Metrolina",
+    "agencyUrl": "https://www.secondharvestmetrolina.org/need-food",
+    "url": "www.secondharvestmetrolina.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://www.secondharvestmetrolina.org/need-food/find-food-near-you?type=&zip=&county=&"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "html",
+        "css": "script::text"
+      },
+      {
+        "name": "regex",
+        "regex": "initMap\\s*\\(\\s*(\\[[\\s\\S]*?\\])\\s*(?:,|\\))",
+        "regex_flags": "s"
+      },
+      {
+        "name": "json"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "MO",
+    "mailAddressCity": "Kansas City",
+    "mailAddressZip": "64129",
+    "mailAddressLatitude": "39.055187",
+    "mailAddressLongitude": "-94.516985",
+    "entityId": "38",
+    "organizationId": "40",
+    "fullName": "Harvesters - The Community Food Network",
+    "agencyUrl": "https://www.harvesters.org/get-food-assistance",
+    "url": "www.harvesters.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://www.harvesters.org/get-food-assistance/food-locator?zip=64101&radius=500&type=#results"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "html",
+        "css": "script::text"
+      },
+      {
+        "name": "regex",
+        "regex": "let\\s+locations\\s*=\\s*(\\[[\\s\\S]*?\\])\\s*;",
+        "regex_flags": "s"
+      },
+      {
+        "name": "json"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "MI",
+    "mailAddressCity": "Kentwood",
+    "mailAddressZip": "49512",
+    "mailAddressLatitude": "42.907575",
+    "mailAddressLongitude": "-85.586515",
+    "entityId": "32",
+    "organizationId": "34",
+    "fullName": "Feeding America West Michigan",
+    "agencyUrl": "https://www.feedwm.org/findfood/",
+    "url": "www.feedwm.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://www.feedwm.org/findfood/"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "html",
+        "css": "script::text"
+      },
+      {
+        "name": "regex",
+        "regex": "(?:var\\s+fafpfixed\\s*;\\s*)?fafpfixed\\s*=\\s*(\\[[\\s\\S]*?\\])\\s*;?",
+        "regex_flags": "s"
+      },
+      {
+        "name": "json"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "MI",
+    "mailAddressCity": "Bath",
+    "mailAddressZip": "48808",
+    "mailAddressLatitude": "42.815",
+    "mailAddressLongitude": "-84.4558",
+    "entityId": "124",
+    "organizationId": "154",
+    "fullName": "Greater Lansing Food Bank",
+    "agencyUrl": "https://greaterlansingfoodbank.org/get-help",
+    "url": "greaterlansingfoodbank.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://greaterlansingfoodbank.org/get-help/pantries"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "html",
+        "css": "script::text"
+      },
+      {
+        "name": "regex",
+        "regex": "(?:var\\s+|ar\\s+)?fafpfixed\\s*=\\s*(\\[[\\s\\S]*?\\])\\s*;?",
+        "regex_flags": "s"
+      },
+      {
+        "name": "json"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "KY",
+    "mailAddressCity": "Lexington",
+    "mailAddressZip": "40511",
+    "mailAddressLatitude": "38.098985",
+    "mailAddressLongitude": "-84.516123",
+    "entityId": "125",
+    "organizationId": "156",
+    "fullName": "Gods Pantry Food Bank, Inc.",
+    "agencyUrl": "https://godspantry.org/help/",
+    "url": "godspantry.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://www.godspantry.org/help"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "html_list",
+        "item_css": "#location-data .location.w-dyn-item"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "NE",
+    "mailAddressCity": "Lincoln",
+    "mailAddressZip": "68521",
+    "mailAddressLatitude": "40.852351",
+    "mailAddressLongitude": "-96.73707",
+    "entityId": "126",
+    "organizationId": "157",
+    "fullName": "Food Bank of Lincoln",
+    "agencyUrl": "https://www.lincolnfoodbank.org/get-food/food-distribution-schedule/",
+    "url": "www.lincolnfoodbank.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://www.lincolnfoodbank.org/get-food/food-finder/?origin=&day=all&type="
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "html",
+        "css": "script::text"
+      },
+      {
+        "name": "regex",
+        "regex": "(?:var|let|const)\\s+markers\\s*=\\s*(\\[[\\s\\S]*?\\])\\s*,\\s*bounds",
+        "regex_flags": "s"
+      },
+      {
+        "name": "json"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "WI",
+    "mailAddressCity": "Madison",
+    "mailAddressZip": "53718",
+    "mailAddressLatitude": "43.058325",
+    "mailAddressLongitude": "-89.29583",
+    "entityId": "128",
+    "organizationId": "160",
+    "fullName": "Second Harvest Foodbank of Southern Wisconsin",
+    "agencyUrl": "https://www.secondharvestsw.org/find-food-near-you/",
+    "url": "www.secondharvestsw.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://www.secondharvestsw.org/wp-admin/admin-ajax.php",
+      "method": "POST",
+      "requestDelay": 0.1,
+      "form": {
+        "action": "dcms_ajax_find_food",
+        "keyword": "",
+        "lookingfor": "",
+        "counties": "",
+        "ordertype": "ASC",
+        "miles": "",
+        "user_lat": "",
+        "user_lon": ""
+      }
+    },
+    "evaluator": {
+      "name": "dcms_pagination",
+      "page_param": "number",
+      "download_delay": 20.0
+    },
+    "parser": [
+      {
+        "name": "html_list",
+        "item_css": "#data-container-find .modal.fade.modal-map",
+        "fields": {
+          "location_name": ".modal-title::text",
+          "address1": ".modal-body strong::text",
+          "website": "a[href*=\"maps.google.com\"]::attr(href)"
+        }
+      }
+    ]
+  },
+  {
+    "mailAddressState": "CA",
+    "mailAddressCity": "Concord",
+    "mailAddressZip": "94520",
+    "mailAddressLatitude": "38.006134",
+    "mailAddressLongitude": "-122.046863",
+    "entityId": "21",
+    "organizationId": "22",
+    "fullName": "Food Bank of Contra Costa and Solano",
+    "agencyUrl": "https://www.foodbankccs.org/find-food/foodbycity/",
+    "url": "www.foodbankccs.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://www.foodbankccs.org/find-food/foodbycity/"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "html",
+        "css": "script::text"
+      },
+      {
+        "name": "regex",
+        "regex": "pins\\s*:\\s*\\{\\s*pins\\s*:\\s*(\\[[\\s\\S]*?\\])\\s*,\\s*hideInitially\\s*:",
+        "regex_flags": "s"
+      },
+      {
+        "name": "json"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "DC",
+    "mailAddressCity": "Washington",
+    "mailAddressZip": "20017",
+    "mailAddressLatitude": "38.948128",
+    "mailAddressLongitude": "-76.999791",
+    "entityId": "87",
+    "organizationId": "95",
+    "fullName": "Capital Area Food Bank",
+    "agencyUrl": "https://www.capitalareafoodbank.org/find-food-assistance/",
+    "url": "www.capitalareafoodbank.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://services.arcgis.com/oCjyzxNy34f0pJCV/arcgis/rest/services/Active_Agencies_Last_45_Days/FeatureServer/0/query?f=json&returnGeometry=true&spatialRel=esriSpatialRelIntersects&outFields=*&where=1%3D1&outSR=4326"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": "arcgis"
+  },
+  {
+    "mailAddressState": "IA",
+    "mailAddressCity": "Hiawatha",
+    "mailAddressZip": "52233",
+    "mailAddressLatitude": "42.054568",
+    "mailAddressLongitude": "-91.676751",
+    "entityId": "100",
+    "organizationId": "114",
+    "fullName": "HACAP Food Reservoir",
+    "agencyUrl": "https://www.hacap.org/findfood",
+    "url": "www.hacap.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://services.arcgis.com/i14SLLmXo7Hn9vNc/ArcGIS/rest/services/CommunityResources/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": "arcgis"
+  },
+  {
+    "mailAddressState": "CA",
+    "mailAddressCity": "Indio",
+    "mailAddressZip": "92201",
+    "mailAddressLatitude": "33.717909",
+    "mailAddressLongitude": "-116.204883",
+    "entityId": "99",
+    "organizationId": "113",
+    "fullName": "FIND Food Bank",
+    "agencyUrl": "https://www.findfoodbank.org/find-food/",
+    "url": "www.findfoodbank.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://findfoodbank.org/map/"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "html",
+        "css": "script:not([src])::text"
+      },
+      {
+        "name": "regex",
+        "regex": "window\\.FWP_JSON\\s*=\\s*(\\{[\\s\\S]*?\\});",
+        "regex_flags": "s",
+        "regex_group": null
+      },
+      {
+        "name": "json"
+      },
+      {
+        "name": "json_path",
+        "json_path": [
+          "preload_data",
+          "settings",
+          "map",
+          "locations"
+        ]
+      }
+    ]
+  },
+  {
+    "mailAddressState": "OR",
+    "mailAddressCity": "Portland",
+    "mailAddressZip": "97211",
+    "mailAddressLatitude": "45.580397",
+    "mailAddressLongitude": "-122.63191",
+    "entityId": "63",
+    "organizationId": "68",
+    "fullName": "Oregon Food Bank",
+    "agencyUrl": "https://www.oregonfoodbank.org/find-support",
+    "url": "www.oregonfoodbank.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://foodfinder.oregonfoodbank.org/api/v1/locations?map_height=247&map_width=688"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      },
+      {
+        "name": "json_path",
+        "json_path": [
+          "locations"
+        ]
+      }
+    ]
+  },
+  {
+    "mailAddressState": "FL",
+    "mailAddressCity": "Orlando",
+    "mailAddressZip": "32805",
+    "mailAddressLatitude": "28.548492",
+    "mailAddressLongitude": "-81.429643",
+    "entityId": "61",
+    "organizationId": "65",
+    "fullName": "Second Harvest Food Bank of Central Florida",
+    "agencyUrl": "https://www.feedhopenow.org/site/SPageServer/?pagename=need_food",
+    "url": "www.feedhopenow.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://cdn.storelocatorwidgets.com/json/cf41cdd4c90f847cb249c034543a8078?callback=slw&_=1763430078180"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "regex",
+        "regex": "^\\s*slw\\((\\{[\\s\\S]*\\})\\)\\s*;?\\s*$",
+        "regex_flags": "s"
+      },
+      {
+        "name": "json"
+      },
+      {
+        "name": "json_path",
+        "json_path": [
+          "stores"
+        ]
+      }
+    ]
+  },
+  {
+    "mailAddressState": "NC",
+    "mailAddressCity": "Raleigh",
+    "mailAddressZip": "27604",
+    "mailAddressLatitude": "35.804769",
+    "mailAddressLongitude": "-78.617212",
+    "entityId": "64",
+    "organizationId": "70",
+    "fullName": "Food Bank of Central & Eastern North Carolina",
+    "agencyUrl": "https://foodbankcenc.org/food-finder/",
+    "url": "foodbankcenc.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://foodfinder.foodbankcenc.org/api/v1/locations?distance=any&map_height=288&map_width=688"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      },
+      {
+        "name": "json_path",
+        "json_path": [
+          "locations"
+        ]
+      }
+    ]
+  },
+  {
+    "mailAddressState": "NY",
+    "mailAddressCity": "Hauppauge",
+    "mailAddressZip": "11788",
+    "mailAddressLatitude": "40.819458",
+    "mailAddressLongitude": "-73.257124",
+    "entityId": "156",
+    "organizationId": "207",
+    "fullName": "Long Island Cares, Inc.",
+    "agencyUrl": "https://www.licares.org/find-food/",
+    "url": "www.licares.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://food-lookup.kcrawford.workers.dev/?rounded=Fri+Jan+30+2026+20%3A50%3A00+GMT-0500+%28Eastern+Standard+Time%29&categories=&zip="
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      },
+      {
+        "name": "json_path",
+        "json_path": [
+          "result"
+        ]
+      }
+    ]
+  },
+  {
+    "mailAddressState": "CA",
+    "mailAddressCity": "Fresno",
+    "mailAddressZip": "93725",
+    "mailAddressLatitude": "36.693825",
+    "mailAddressLongitude": "-119.75818",
+    "entityId": "174",
+    "organizationId": "281",
+    "fullName": "Central California Food Bank",
+    "agencyUrl": "https://ccfoodbank.org/findfood/",
+    "url": "ccfoodbank.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://ccfoodbank.org/wp-content/uploads/ssf-wp-uploads/ssf-data.json"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      },
+      {
+        "name": "json_path",
+        "json_path": [
+          "item"
+        ]
+      }
+    ]
+  },
+  {
+    "mailAddressState": "KY",
+    "mailAddressCity": "Elizabethtown",
+    "mailAddressZip": "42701",
+    "mailAddressLatitude": "37.685038",
+    "mailAddressLongitude": "-85.905558",
+    "entityId": "106",
+    "organizationId": "124",
+    "fullName": "Feeding America, Kentuckys Heartland",
+    "agencyUrl": "https://feedingamericaky.org/find-help/",
+    "url": "feedingamericaky.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://feedingamericaky.org/wp-json/wpgmza/v1/features/"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      },
+      {
+        "name": "json_path",
+        "json_path": [
+          "markers"
+        ]
+      }
+    ]
+  },
+  {
+    "mailAddressState": "IN",
+    "mailAddressCity": "Fort Wayne",
+    "mailAddressZip": "46816",
+    "mailAddressLatitude": "41.017311",
+    "mailAddressLongitude": "-85.121857",
+    "entityId": "111",
+    "organizationId": "135",
+    "fullName": "Community Harvest Food Bank of Northeast Indiana, Inc.",
+    "agencyUrl": "https://www.communityharvest.org/get-help/",
+    "url": "www.communityharvest.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://www.communityharvest.org/wp-json/wpgmza/v1/features/",
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Accept-Language": "en-US,en;q=0.9",
+        "Cache-Control": "no-cache",
+        "Pragma": "no-cache",
+        "Referer": "https://www.communityharvest.org/get-help/",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+      }
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      },
+      {
+        "name": "json_path",
+        "json_path": [
+          "markers"
+        ]
+      }
+    ]
+  },
+  {
+    "mailAddressState": "WI",
+    "mailAddressCity": "Milwaukee",
+    "mailAddressZip": "53205",
+    "mailAddressLatitude": "43.057423",
+    "mailAddressLongitude": "-87.932971",
+    "entityId": "48",
+    "organizationId": "51",
+    "fullName": "Feeding America Eastern Wisconsin",
+    "agencyUrl": "https://feedingamericawi.org/find-a-pantry",
+    "url": "feedingamericawi.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://feedingamericawi.org/wp-json/wpgmza/v1/markers/"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "CA",
+    "mailAddressCity": "San Jose",
+    "mailAddressZip": "95125",
+    "mailAddressLatitude": "37.2925",
+    "mailAddressLongitude": "-121.876311",
+    "entityId": "72",
+    "organizationId": "79",
+    "fullName": "Second Harvest of Silicon Valley",
+    "agencyUrl": "https://www.shfb.org/get-food/",
+    "url": "www.SHFB.org",
+    "generator": {
+      "name": "default",
+      "source": "https://www.shfb.org/wp-admin/admin-ajax.php?action=mmfl_get_data&page_slug=get-food"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      },
+      {
+        "name": "json_path",
+        "json_path": [
+          "locations"
+        ],
+        "dict_key_field": "referenceId"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "NY",
+    "mailAddressCity": "Melville",
+    "mailAddressZip": "11747",
+    "mailAddressLatitude": "40.762729",
+    "mailAddressLongitude": "-73.43377",
+    "entityId": "190",
+    "organizationId": "311",
+    "fullName": "Island Harvest",
+    "agencyUrl": "https://www.islandharvest.org/find-help/find-a-food-pantry/",
+    "url": "www.islandharvest.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://storerocket.io/api/user/n0pjnLgp6V/locations?lat=&lng=&radius=&units=miles"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      },
+      {
+        "name": "json_path",
+        "json_path": [
+          "results",
+          "locations"
+        ]
+      }
+    ]
+  },
+  {
+    "mailAddressState": "AL",
+    "mailAddressCity": "Huntsville",
+    "mailAddressZip": "35824",
+    "mailAddressLatitude": "34.643091",
+    "mailAddressLongitude": "-86.75109",
+    "entityId": "120",
+    "organizationId": "146",
+    "fullName": "Food Bank of North Alabama",
+    "agencyUrl": "https://www.foodbanknorthal.org/findfood/",
+    "url": "www.foodbanknorthal.org/",
+    "generator": {
+      "name": "zip_iterator",
+      "source": "https://www.foodbanknorthal.org/wp-admin/admin-ajax.php",
+      "request_method": "POST",
+      "zip_param": "address",
+      "params": {
+        "action": "csl_ajax_search"
+      },
+      "zipcodes": [
+        "35601"
+      ],
+      "headers": {
+        "Accept": "application/json, text/javascript, */*; q=0.01",
+        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "Origin": "https://www.foodbanknorthal.org",
+        "Referer": "https://www.foodbanknorthal.org/findfood/",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
+        "X-Requested-With": "XMLHttpRequest"
+      }
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      },
+      {
+        "name": "json_path",
+        "path": [
+          "response"
+        ]
+      }
+    ]
+  },
+  {
+    "mailAddressState": "NJ",
+    "mailAddressCity": "Pennsauken",
+    "mailAddressZip": "8110",
+    "mailAddressLatitude": "39.981305",
+    "mailAddressLongitude": "-75.040113",
+    "entityId": "12",
+    "organizationId": "12",
+    "fullName": "Food Bank of South Jersey",
+    "agencyUrl": "https://foodbanksj.org/zip-code-locator/",
+    "url": "foodbanksj.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://foodbanksj.org/wp-admin/admin-ajax.php?action=asl_load_stores&load_all=2&layout=1&nw[]=41.766805&nw[]=-76.707790&se[]=38.916254&se[]=-73.806351"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "AR",
+    "mailAddressCity": "Ft. Smith",
+    "mailAddressZip": "72901",
+    "mailAddressLatitude": "35.329198",
+    "mailAddressLongitude": "-94.417768",
+    "entityId": "114",
+    "organizationId": "138",
+    "fullName": "River Valley Regional Food Bank",
+    "agencyUrl": "https://www.rvrfoodbank.org/get-help/pantry-locator/",
+    "url": "www.rvrfoodbank.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://www.rvrfoodbank.org/wp-admin/admin-ajax.php",
+      "method": "POST",
+      "form": {
+        "action": "csl_ajax_search"
+      }
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      },
+      {
+        "name": "json_path",
+        "path": [
+          "response"
+        ]
+      }
+    ]
+  },
+  {
+    "mailAddressState": "NC",
+    "mailAddressCity": "Fayetteville",
+    "mailAddressZip": "28302",
+    "mailAddressLatitude": "35.040781",
+    "mailAddressLongitude": "-78.855277",
+    "entityId": "110",
+    "organizationId": "134",
+    "fullName": "Second Harvest Food Bank of Southeast North Carolina",
+    "agencyUrl": "https://hungercantwait.org/find-help/find-food/",
+    "url": "hungercantwait.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://hungercantwait.org/wp-admin/admin-ajax.php",
+      "method": "POST",
+      "form": {
+        "action": "csl_ajax_search"
+      }
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      },
+      {
+        "name": "json_path",
+        "path": [
+          "response"
+        ]
+      }
+    ]
+  },
+  {
+    "mailAddressState": "NY",
+    "mailAddressCity": "Buffalo",
+    "mailAddressZip": "14206",
+    "mailAddressLatitude": "42.880942",
+    "mailAddressLongitude": "-78.806667",
+    "entityId": "11",
+    "organizationId": "11",
+    "fullName": "FeedMore Western New York, Inc.",
+    "agencyUrl": "https://www.feedmorewny.org/programs-services/find-food/pantry-locator/",
+    "url": "www.feedmorewny.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://www.feedmorewny.org/wp-admin/admin-ajax.php",
+      "method": "POST",
+      "form": {
+        "action": "csl_ajax_search"
+      }
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      },
+      {
+        "name": "json_path",
+        "path": [
+          "response"
+        ]
+      }
+    ]
+  },
+  {
+    "mailAddressState": "NC",
+    "mailAddressCity": "Elizabeth City",
+    "mailAddressZip": "27909",
+    "mailAddressLatitude": "36.268518",
+    "mailAddressLongitude": "-76.208552",
+    "entityId": "105",
+    "organizationId": "123",
+    "fullName": "Food Bank of the Albemarle",
+    "agencyUrl": "https://afoodbank.org/agency-tools/agency-locator/",
+    "url": "afoodbank.org/",
+    "generator": {
+      "name": "box_search",
+      "source": "https://afoodbank.org/wp-admin/admin-ajax.php?action=store_search&lat=35.35014&lng=-80.20006&max_results=500&search_radius=500&autoload=1",
+      "headers": {
+        "Accept": "*/*",
+        "Host": "afoodbank.org",
+        "Referer": "https://afoodbank.org/get-help/food-locator/",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+      },
+      "start_lat": 35.80877,
+      "start_lng": -76.75674,
+      "coverage_width_miles": 200,
+      "coverage_height_miles": 200,
+      "grid_spacing_miles": 20,
+      "query_radius_miles": 20,
+      "lat_param": "lat",
+      "lng_param": "lng",
+      "radius_param": "search_radius",
+      "requestDelay": 1.0
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "GA",
+    "mailAddressCity": "Midland",
+    "mailAddressZip": "31820",
+    "mailAddressLatitude": "32.545474",
+    "mailAddressLongitude": "-84.870482",
+    "entityId": "102",
+    "organizationId": "117",
+    "fullName": "Feeding the Valley Food Bank",
+    "agencyUrl": "https://feedingthevalley.org/locate-a-food-pantry-near-you/",
+    "url": "feedingthevalley.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://feedingthevalley.org/wp-admin/admin-ajax.php?action=store_search&max_results=500&search_radius=500&autoload=1",
+      "headers": {
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Host": "feedingthevalley.org",
+        "Referer": "https://www.google.com/",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+      }
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "MO",
+    "mailAddressCity": "Columbia",
+    "mailAddressZip": "65202",
+    "mailAddressLatitude": "38.972437",
+    "mailAddressLongitude": "-92.306539",
+    "entityId": "101",
+    "organizationId": "116",
+    "fullName": "The Food Bank for Central & Northeast Missouri",
+    "agencyUrl": "https://sharefoodbringhope.org/get-help",
+    "url": "www.sharefoodbringhope.org",
+    "generator": {
+      "name": "default",
+      "source": "https://sharefoodbringhope.org/wp-admin/admin-ajax.php",
+      "method": "POST",
+      "max_retry_times": 10,
+      "request_delay": 1,
+      "form": {
+        "action": "get_closest_stores",
+        "program": "all",
+        "county": "all"
+      },
+      "headers": {
+        "Accept": "application/json, text/javascript, */*; q=0.01",
+        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "Origin": "https://sharefoodbringhope.org",
+        "Referer": "https://sharefoodbringhope.org/get-help",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
+        "X-Requested-With": "XMLHttpRequest"
+      }
+    },
+    "evaluator": {
+      "name": "json_pagination",
+      "page_param": "page",
+      "total_pages_path": [
+        "data",
+        "pagination",
+        "total_pages"
+      ],
+      "current_page_path": [
+        "data",
+        "pagination",
+        "current_page"
+      ]
+    },
+    "parser": [
+      {
+        "name": "json"
+      },
+      {
+        "name": "locator_html_coordinates"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "MI",
+    "mailAddressCity": "Oak Park",
+    "mailAddressZip": "48237",
+    "mailAddressLatitude": "42.448723",
+    "mailAddressLongitude": "-83.193389",
+    "entityId": "186",
+    "organizationId": "306",
+    "fullName": "Forgotten Harvest",
+    "agencyUrl": "https://www.forgottenharvest.org/find-food/",
+    "url": "www.forgottenharvest.org/",
+    "generator": {
+      "name": "box_search",
+      "source": "https://www.forgottenharvest.org/wp-admin/admin-ajax.php?action=store_search&max_results=100",
+      "start_lat": 42.448723,
+      "start_lng": -83.193389,
+      "coverage_width_miles": 200,
+      "coverage_height_miles": 200,
+      "grid_spacing_miles": 5,
+      "query_radius_miles": 20,
+      "lat_param": "lat",
+      "lng_param": "lng",
+      "radius_param": "search_radius",
+      "requestDelay": 1.0
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "NY",
+    "mailAddressCity": "Latham",
+    "mailAddressZip": "12110",
+    "mailAddressLatitude": "42.764442",
+    "mailAddressLongitude": "-73.813379",
+    "entityId": "40",
+    "organizationId": "42",
+    "fullName": "Regional Food Bank of Northeastern New York",
+    "agencyUrl": "https://regionalfoodbank.net/find-nearest-agency/",
+    "url": "regionalfoodbank.net/",
+    "generator": {
+      "name": "box_search",
+      "source": "https://regionalfoodbank.net/wp-admin/admin-ajax.php?action=store_search&max_results=50",
+      "start_lat": 42.764442,
+      "start_lng": -73.813379,
+      "coverage_width_miles": 500,
+      "coverage_height_miles": 500,
+      "grid_spacing_miles": 15,
+      "query_radius_miles": 50,
+      "lat_param": "lat",
+      "lng_param": "lng",
+      "radius_param": "search_radius",
+      "requestDelay": 1.0
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "MD",
+    "mailAddressCity": "Baltimore",
+    "mailAddressZip": "21227",
+    "mailAddressLatitude": "39.224118",
+    "mailAddressLongitude": "-76.685597",
+    "entityId": "7",
+    "organizationId": "7",
+    "fullName": "Maryland Food Bank",
+    "agencyUrl": "https://mdfoodbank.org/find-food/",
+    "url": "mdfoodbank.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://mdfoodbank.org/wp-admin/admin-ajax.php",
+      "method": "POST",
+      "form": {
+        "action": "gmw_form_ajax_submission",
+        "per_page": "100",
+        "page": "1",
+        "form_id": "2"
+      },
+      "headers": {
+        "Accept": "application/json, text/javascript, */*; q=0.01",
+        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "Origin": "https://mdfoodbank.org",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
+        "X-Requested-With": "XMLHttpRequest"
+      }
+    },
+    "evaluator": {
+      "name": "json_pagination",
+      "debug": true,
+      "page_param": "page",
+      "total_pages_path": [
+        "max_pages"
+      ],
+      "current_page_path": [
+        "form",
+        "paged"
+      ]
+    },
+    "parser": [
+      {
+        "name": "json"
+      },
+      {
+        "name": "json_path",
+        "path": [
+          "results"
+        ]
+      }
+    ]
+  },
+  {
+    "mailAddressState": "ID",
+    "mailAddressCity": "Meridian",
+    "mailAddressZip": "83642",
+    "mailAddressLatitude": "43.609893",
+    "mailAddressLongitude": "-116.348802",
+    "entityId": "96",
+    "organizationId": "109",
+    "fullName": "The Idaho Foodbank",
+    "agencyUrl": "https://idahofoodbank.org/locations/",
+    "url": "idahofoodbank.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://idahofoodbank.org/wp-admin/admin-ajax.php?action=asl_load_stores&asl_lang=&load_all=1&layout=1"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "VA",
+    "mailAddressCity": "Verona",
+    "mailAddressZip": "24482",
+    "mailAddressLatitude": "38.199707",
+    "mailAddressLongitude": "-79.004925",
+    "entityId": "85",
+    "organizationId": "93",
+    "fullName": "Blue Ridge Area Food Bank",
+    "agencyUrl": "https://www.brafb.org/find-food/",
+    "url": "www.brafb.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://loudounfeeds.org/wp-admin/admin-ajax.php?action=get_locations_by_ids&ids[]=2770&ids[]=2694&ids[]=2696&ids[]=2697&ids[]=2698&ids[]=2721&ids[]=2729&ids[]=2700&ids[]=2701&ids[]=2704&ids[]=2708&ids[]=2706&ids[]=2710&ids[]=2711&ids[]=2713&ids[]=2723&ids[]=2714&ids[]=2715&ids[]=2717&ids[]=2718&ids[]=2726&ids[]=2727&ids[]=2728&ids[]=2720"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      },
+      {
+        "name": "json_path",
+        "path": [
+          "locations"
+        ]
+      }
+    ]
+  },
+  {
+    "mailAddressState": "WA",
+    "mailAddressCity": "Spokane",
+    "mailAddressZip": "99202",
+    "mailAddressLatitude": "47.659938",
+    "mailAddressLongitude": "-117.391108",
+    "entityId": "76",
+    "organizationId": "83",
+    "fullName": "Second Harvest Inland Northwest",
+    "agencyUrl": "https://2-harvest.org/food-near-me-wa/",
+    "url": "2-harvest.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://foodfinder.2-harvest.org/api/v1/locations?distance=any&map_height=282&map_width=968"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      },
+      {
+        "name": "json_path",
+        "path": [
+          "locations"
+        ]
+      }
+    ]
+  },
+  {
+    "mailAddressState": "GA",
+    "mailAddressCity": "Savannah",
+    "mailAddressZip": "31405",
+    "mailAddressLatitude": "32.058572",
+    "mailAddressLongitude": "-81.159753",
+    "entityId": "73",
+    "organizationId": "80",
+    "fullName": "Second Harvest of Coastal Georgia",
+    "agencyUrl": "https://helpendhunger.org/find-food/",
+    "url": "www.helpendhunger.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://helpendhunger.org/wp-admin/admin-ajax.php?action=store_search&autoload=1"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "NY",
+    "mailAddressCity": "Rochester",
+    "mailAddressZip": "14615",
+    "mailAddressLatitude": "43.192257",
+    "mailAddressLongitude": "-77.659913",
+    "entityId": "68",
+    "organizationId": "75",
+    "fullName": "Foodlink, Inc.",
+    "agencyUrl": "https://foodlinkny.org/find-food/",
+    "url": "foodlinkny.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://foodlinkny.org/wp-admin/admin-ajax.php?action=asl_load_stores&load_all=1&layout=1"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "CA",
+    "mailAddressCity": "Oxnard",
+    "mailAddressZip": "93036",
+    "mailAddressLatitude": "34.255399",
+    "mailAddressLongitude": "-119.161506",
+    "entityId": "62",
+    "organizationId": "66",
+    "fullName": "Food Share, Inc.",
+    "agencyUrl": "https://foodshare.com/findhelp/#findapantry",
+    "url": "foodshare.com/",
+    "generator": {
+      "name": "default",
+      "source": "https://foodshare.com/wp-admin/admin-ajax.php?action=asl_load_stores&load_all=1&layout=1"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "NE",
+    "mailAddressCity": "Omaha",
+    "mailAddressZip": "68127",
+    "mailAddressLatitude": "41.213484",
+    "mailAddressLongitude": "-96.077738",
+    "entityId": "59",
+    "organizationId": "63",
+    "fullName": "Food Bank for the Heartland",
+    "agencyUrl": "https://foodbankheartland.org/get-food/",
+    "url": "foodbankheartland.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://api.storepoint.co/v1/161e1dcd91b7b8/locations?rq="
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      },
+      {
+        "name": "json_path",
+        "path": [
+          "results",
+          "locations"
+        ]
+      }
+    ]
+  },
+  {
+    "mailAddressState": "MA",
+    "mailAddressCity": "Chicopee",
+    "mailAddressZip": "1020",
+    "mailAddressLatitude": "42.155445",
+    "mailAddressLongitude": "-72.5599",
+    "entityId": "33",
+    "organizationId": "35",
+    "fullName": "Food Bank of Western Massachusetts",
+    "agencyUrl": "https://www.foodbankwma.org/get-help/food-pantry-meal-program-schedule/",
+    "url": "www.foodbankwma.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://www.foodbankwma.org/wp-admin/admin-ajax.php?action=store_search&autoload=1"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "IA",
+    "mailAddressCity": "Des Moines",
+    "mailAddressZip": "50316",
+    "mailAddressLatitude": "41.614257",
+    "mailAddressLongitude": "-93.592075",
+    "entityId": "25",
+    "organizationId": "26",
+    "fullName": "Food Bank of Iowa",
+    "agencyUrl": "https://www.foodbankiowa.org/gethelp",
+    "url": "www.foodbankiowa.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://opensheet.elk.sh/184BAGr66tI7TMYIyRIz1Qbt-Jbmor-Dn4c7VpLyhRCE/fboi"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "NV",
+    "mailAddressCity": "Las Vegas",
+    "mailAddressZip": "89115",
+    "mailAddressLatitude": "36.236101",
+    "mailAddressLongitude": "-115.096397",
+    "entityId": "214",
+    "organizationId": "155",
+    "fullName": "Three Square Food Bank",
+    "agencyUrl": "https://www.threesquare.org/get-help",
+    "url": "www.threesquare.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://foodfinder.threesquare.org/api/v1/locations"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      },
+      {
+        "name": "json_path",
+        "path": [
+          "locations"
+        ]
+      }
+    ]
+  },
+  {
+    "mailAddressState": "TX",
+    "mailAddressCity": "Corpus Christi",
+    "mailAddressZip": "78405",
+    "mailAddressLatitude": "27.765359",
+    "mailAddressLongitude": "-97.462211",
+    "entityId": "22",
+    "organizationId": "23",
+    "fullName": "Coastal Bend Food Bank",
+    "agencyUrl": "https://coastalbendfoodbank.org/get-help/",
+    "url": "coastalbendfoodbank.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://coastalbendfoodbank.org/wp-admin/admin-ajax.php?action=store_search&autoload=1"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "ME",
+    "mailAddressCity": "Auburn",
+    "mailAddressZip": "4211",
+    "mailAddressLatitude": "44.031205",
+    "mailAddressLongitude": "-70.288327",
+    "entityId": "169",
+    "organizationId": "259",
+    "fullName": "Good Shepherd Food Bank",
+    "agencyUrl": "https://www.gsfb.org/get-help/",
+    "url": "www.gsfb.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://www.gsfb.org/wp-admin/admin-ajax.php?action=store_search&filter=181&autoload=1"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "NY",
+    "mailAddressCity": "Elmsford",
+    "mailAddressZip": "10523",
+    "mailAddressLatitude": "41.072904",
+    "mailAddressLongitude": "-73.813153",
+    "entityId": "165",
+    "organizationId": "222",
+    "fullName": "Feeding Westchester",
+    "agencyUrl": "https://feedingwestchester.org/find-help/",
+    "url": "feedingwestchester.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLjYBX_cioM51tL3Qm1WL4VhtOtBRy9DRShpBczH4OYjLkbnusggZhdlweryNpERKhseIFfwmRDlk8bF5czlpP8W26lXOwJTFyxGSQf6hxY1SbZIgWAi-ZQaTDDpnKIIoP8aQAI_9EAINt_waaWzKeI5e491FHh9_ZaxojLT2gM1vC0mW8LGlro8OOYcqhvyEWDD4Bi76z9e3XWvp6OrVel9-31y8PEYdkBPTTRBQKP2W1yk0WGTsrW-avw6o8yMa1bEX1KEcgOKPVGlYBI8sHSuu32uxHDsxY1t1TmY&lib=MkHQY59LHCXNePhRUXyxsWA8IQOMZtV1s"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "OH",
+    "mailAddressCity": "Toledo",
+    "mailAddressZip": "43604",
+    "mailAddressLatitude": "41.660022",
+    "mailAddressLongitude": "-83.544735",
+    "entityId": "151",
+    "organizationId": "197",
+    "fullName": "Toledo Northwestern Ohio Food Bank",
+    "agencyUrl": "https://www.toledofoodbank.org/get-help/",
+    "url": "www.toledofoodbank.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://api.storepoint.co/v1/1662a5ad8a1488/locations?tags[]=food%20pantry&tags[]=soup%20kitchen"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      },
+      {
+        "name": "json_path",
+        "path": [
+          "results",
+          "locations"
+        ]
+      }
+    ]
+  },
+  {
+    "mailAddressState": "MA",
+    "mailAddressCity": "Shrewsbury",
+    "mailAddressZip": "1545",
+    "mailAddressLatitude": "42.275881",
+    "mailAddressLongitude": "-71.721284",
+    "entityId": "142",
+    "organizationId": "186",
+    "fullName": "Worcester County Food Bank, Inc.",
+    "agencyUrl": "https://foodbank.org/find-food/",
+    "url": "foodbank.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://foodbank.org/wp-admin/admin-ajax.php?action=store_search&lat=42.3555076&lng=-71.0565364&max_results=100&search_radius=500&filter=171"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "CA",
+    "mailAddressCity": "Oakland",
+    "mailAddressZip": "94621",
+    "mailAddressLatitude": "37.741448",
+    "mailAddressLongitude": "-122.201009",
+    "entityId": "133",
+    "organizationId": "169",
+    "fullName": "Alameda County Community Food Bank",
+    "agencyUrl": "https://www.accfb.org/get-food/",
+    "url": "www.accfb.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://accfbfnfaust.wpengine.com/index.php?graphql=&query=query getLocations($where: RootQueryToLocationConnectionWhereArgs, $first: Int) { locations(where: $where, first: $first) { nodes { id locationFields { agencyIdentifier addressLine1 addressLine2 city displayName zipCode latitude longitude __typename } __typename } __typename } }&operationName=getLocations&variables={\"where\":{\"metaQuery\":{\"relation\":\"AND\",\"metaArray\":[{\"key\":\"latitude\",\"value\":\"37.30527,38.20359\",\"compare\":\"BETWEEN\"},{\"key\":\"longitude\",\"value\":\"-121.71386,-122.85004\",\"compare\":\"BETWEEN\"}]},\"language\":\"EN\"},\"first\":500}"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      },
+      {
+        "name": "json_path",
+        "path": [
+          "data",
+          "locations",
+          "nodes"
+        ]
+      }
+    ]
+  },
+  {
+    "mailAddressState": "PA",
+    "mailAddressCity": "Nazareth",
+    "mailAddressZip": "18064",
+    "mailAddressLatitude": "40.713434",
+    "mailAddressLongitude": "-75.381999",
+    "entityId": "95",
+    "organizationId": "106",
+    "fullName": "Second Harvest Food Bank of Lehigh Valley and NE Pennsylvania",
+    "agencyUrl": "https://shfblv.org/find-food/",
+    "url": "shfblv.org/",
+    "generator": {
+      "name": "box_search",
+      "source": "https://www.shfblv.org/wp-admin/admin-ajax.php?action=store_search&max_results=100&autoload=1",
+      "headers": {
+        "Accept": "*/*",
+        "Host": "www.shfblv.org",
+        "Referer": "https://www.shfblv.org/find-food/",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+      },
+      "start_lat": 40.62593,
+      "start_lng": -75.37046,
+      "coverage_width_miles": 100,
+      "coverage_height_miles": 100,
+      "grid_spacing_miles": 10,
+      "query_radius_miles": 40,
+      "lat_param": "lat",
+      "lng_param": "lng",
+      "radius_param": "search_radius",
+      "requestDelay": 1.0
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "ND",
+    "mailAddressCity": "Fargo",
+    "mailAddressZip": "58102",
+    "mailAddressLatitude": "46.878868",
+    "mailAddressLongitude": "-96.80944",
+    "entityId": "163",
+    "organizationId": "220",
+    "fullName": "Great Plains Food Bank",
+    "agencyUrl": "https://www.greatplainsfoodbank.org/get-help/",
+    "url": "www.greatplainsfoodbank.org/",
+    "generator": {
+      "name": "default",
+      "use_realistic_headers": true,
+      "max_retry_times": 5,
+      "source": "https://www.google.com/maps/d/u/1/embed?mid=1fJPIU61mq7v_iBTkdRS34sZwnatFSOM"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "html",
+        "xpath": "//script[@nonce][contains(., '_pageData')][1]/text()"
+      },
+      {
+        "name": "regex",
+        "regex": "var\\s+_pageData\\s*=\\s*\"([\\s\\S]*?)\";",
+        "regex_flags": "s",
+        "regex_group": null
+      },
+      {
+        "name": "json"
+      },
+      {
+        "name": "mymaps"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "MO",
+    "mailAddressCity": "Springfield",
+    "mailAddressZip": "65803",
+    "mailAddressLatitude": "37.246034",
+    "mailAddressLongitude": "-93.235217",
+    "entityId": "147",
+    "organizationId": "192",
+    "fullName": "Ozarks Food Harvest",
+    "agencyUrl": "https://ozarksfoodharvest.org/need-help/",
+    "url": "ozarksfoodharvest.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://ozarksfoodharvest.org/wp-admin/admin-ajax.php?includelist[]=9055&includelist[]=4547&includelist[]=3952&includelist[]=3041&includelist[]=2503&includelist[]=2464&includelist[]=2452&includelist[]=2432&includelist[]=2401&includelist[]=2374&includelist[]=2281&includelist[]=2186&action=locations_in_county"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "NV",
+    "mailAddressCity": "Sparks",
+    "mailAddressZip": "89437",
+    "mailAddressLatitude": "39.5272",
+    "mailAddressLongitude": "-119.822",
+    "entityId": "75",
+    "organizationId": "82",
+    "fullName": "Food Bank of Northern Nevada",
+    "agencyUrl": "https://fbnn.org/gethelp/",
+    "url": "fbnn.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://www.fbnn.org/gethelp/foodfinder/"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "html",
+        "css": "script::text"
+      },
+      {
+        "name": "regex",
+        "regex": "pins\\s*:\\s*\\{\\s*pins\\s*:\\s*(\\[[\\s\\S]*?\\])\\s*,\\s*hideInitially\\s*:",
+        "regex_flags": "s"
+      },
+      {
+        "name": "json"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "TX",
+    "mailAddressCity": "El Paso",
+    "mailAddressZip": "79927",
+    "mailAddressLatitude": "31.669662",
+    "mailAddressLongitude": "-106.323845",
+    "entityId": "726",
+    "organizationId": "726",
+    "fullName": "El Pasoans Fighting Hunger",
+    "agencyUrl": "https://elpasoansfightinghunger.org/need-help",
+    "url": "elpasoansfightinghunger.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://elpasoansfightinghunger.org/map"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "html",
+        "xpath": "//script[contains(., 'const places = {')]/text()"
+      },
+      {
+        "name": "regex",
+        "regex": "const\\s+places\\s*=\\s*(\\{.*?\\})\\s*;",
+        "regex_flags": "s"
+      },
+      {
+        "name": "json"
+      },
+      {
+        "name": "json_path",
+        "path": [],
+        "dict_key_field": "date"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "GA",
+    "mailAddressCity": "Augusta",
+    "mailAddressZip": "30909",
+    "mailAddressLatitude": "33.44988",
+    "mailAddressLongitude": "-82.06008",
+    "entityId": "5",
+    "organizationId": "5",
+    "fullName": "Golden Harvest Food Bank",
+    "agencyUrl": "https://goldenharvest.org/find-help/",
+    "url": "goldenharvest.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://goldenharvest.org/wp-admin/admin-ajax.php",
+      "method": "POST",
+      "form": {
+        "action": "csl_ajax_search"
+      }
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      },
+      {
+        "name": "json_path",
+        "path": [
+          "response"
+        ]
+      }
+    ]
+  },
+  {
+    "mailAddressState": "FL",
+    "mailAddressCity": "Ft. Pierce",
+    "mailAddressZip": "34947",
+    "mailAddressLatitude": "27.450884",
+    "mailAddressLongitude": "-80.360618",
+    "entityId": "251",
+    "organizationId": "563",
+    "fullName": "Treasure Coast Food Bank",
+    "agencyUrl": "https://stophunger.org/findhelp/",
+    "url": "www.stophunger.org",
+    "generator": {
+      "name": "default",
+      "source": "https://stophunger.org/wp-admin/admin-ajax.php",
+      "method": "POST",
+      "form": {
+        "action": "csl_ajax_onload"
+      }
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      },
+      {
+        "name": "json_path",
+        "path": [
+          "response"
+        ]
+      }
+    ]
+  },
+  {
+    "mailAddressState": "TN",
+    "mailAddressCity": "Memphis",
+    "mailAddressZip": "38118",
+    "mailAddressLatitude": "35.042917",
+    "mailAddressLongitude": "-89.909936",
+    "entityId": "46",
+    "organizationId": "49",
+    "fullName": "Mid-South Food Bank",
+    "agencyUrl": "https://www.midsouthfoodbank.org/find-food",
+    "url": "www.midsouthfoodbank.org",
+    "generator": {
+      "name": "default",
+      "source": "https://api.sitewrench.com/locations/257633.json?token=d0c4d88655f6e9f594ed0d90d7fb7386b2ef41f5&siteId=2749",
+      "use_realistic_headers": true
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      },
+      {
+        "name": "json_path",
+        "path": [
+          "Places"
+        ]
+      }
+    ]
+  },
+  {
+    "mailAddressState": "MI",
+    "mailAddressCity": "Ann Arbor",
+    "mailAddressZip": "48105",
+    "mailAddressLatitude": "42.3179254",
+    "mailAddressLongitude": "-83.7272804",
+    "entityId": "185",
+    "organizationId": "305",
+    "fullName": "Food Gatherers",
+    "agencyUrl": "https://www.foodgatherers.org/find-help/",
+    "url": "www.foodgatherers.org",
+    "generator": {
+      "name": "default",
+      "source": [
+        "https://www.foodgatherers.org/foodresources/",
+        "https://www.foodgatherers.org/foodresources/map/page/2/",
+        "https://www.foodgatherers.org/foodresources/map/page/3/",
+        "https://www.foodgatherers.org/foodresources/map/page/4/",
+        "https://www.foodgatherers.org/foodresources/map/page/5/",
+        "https://www.foodgatherers.org/foodresources/map/page/6/",
+        "https://www.foodgatherers.org/foodresources/map/page/7/",
+        "https://www.foodgatherers.org/foodresources/map/page/8/"
+      ]
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "html",
+        "xpath": "//script[@type='application/ld+json']/text()"
+      },
+      {
+        "name": "json"
+      },
+      {
+        "name": "json_path",
+        "path": []
+      }
+    ]
+  },
+  {
+    "mailAddressState": "NJ",
+    "mailAddressCity": "Hillside",
+    "mailAddressZip": "7205",
+    "mailAddressLatitude": "40.697239",
+    "mailAddressLongitude": "-74.212243",
+    "entityId": "55",
+    "organizationId": "58",
+    "fullName": "Community Foodbank of New Jersey",
+    "agencyUrl": "https://cfbnj.org/findfood/",
+    "url": "cfbnj.org/",
+    "generator": {
+      "name": "zip_iterator",
+      "source": "https://ffnn.cfbnj.org/api/distance",
+      "request_method": "GET",
+      "states": [
+        "NJ"
+      ],
+      "zip_param": "zip",
+      "params": {
+        "radius": "30"
+      }
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "MI",
+    "mailAddressCity": "Flint",
+    "mailAddressZip": "48503",
+    "mailAddressLatitude": "43.008458",
+    "mailAddressLongitude": "-83.666168",
+    "entityId": "29",
+    "organizationId": "30",
+    "fullName": "Food Bank of Eastern Michigan",
+    "agencyUrl": "https://www.fbem.org/where-to-get-food/find-a-food-pantry/",
+    "url": "www.fbem.org/",
+    "generator": {
+      "name": "box_search",
+      "source": "https://www.fbem.org/wp-admin/admin-ajax.php",
+      "request_method": "POST",
+      "params": {
+        "action": "csl_ajax_search",
+        "radius": 50
+      },
+      "start_lat": 43.0125274,
+      "start_lng": -83.6874562,
+      "coverage_width_miles": 100,
+      "coverage_height_miles": 100,
+      "grid_spacing_miles": 10,
+      "query_radius_miles": 50,
+      "lat_param": "lat",
+      "lng_param": "lng",
+      "radius_param": "radius",
+      "requestDelay": 1.0
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      },
+      {
+        "name": "json_path",
+        "path": [
+          "response"
+        ]
+      }
+    ]
+  },
+  {
+    "mailAddressState": "LA",
+    "mailAddressCity": "Monroe",
+    "mailAddressZip": "71203",
+    "mailAddressLatitude": "32.511828",
+    "mailAddressLongitude": "-92.06143",
+    "entityId": "201",
+    "organizationId": "339",
+    "fullName": "Food Bank of Northeast Louisiana",
+    "agencyUrl": "https://www.foodbanknela.org/find-food/",
+    "url": "www.foodbanknela.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://foodbanknela.org/wp-admin/admin-ajax.php?action=store_search&lat=32.50931&lng=-92.1193&max_results=25&search_radius=50&autoload=1",
+      "use_realistic_headers": true,
+      "requestDelay": 2.0,
+      "downloadTimeout": 45,
+      "max_retry_times": 1
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "SD",
+    "mailAddressCity": "Sioux Falls",
+    "mailAddressZip": "57107",
+    "mailAddressLatitude": "43.5974355",
+    "mailAddressLongitude": "-96.7611874",
+    "entityId": "144",
+    "organizationId": "188",
+    "fullName": "Feeding South Dakota",
+    "agencyUrl": "https://feedingsouthdakota.org/agencies",
+    "url": "www.feedingsouthdakota.org",
+    "generator": {
+      "name": "default",
+      "source": "https://www.feedingsouthdakota.org/api",
+      "method": "POST",
+      "requestDelay": 0.1,
+      "json_body": true,
+      "body": {
+        "query": "\n  query getAllLocations($location: String, $lat: Float!, $lng: Float!, $radius: Float, $limit: Int, $offset: Int, $related: [QueryArgument], $orderBy: String, $widthLg: Int!, $heightLg: Int!, $widthSm: Int!, $heightSm: Int!, $widthLq: Int!, $heightLq: Int!) {\n    totalLocations: entryCount(\n      section: \"locations\"\n      relatedTo: $related\n      locationMap: {unit: Miles, location: $location, country: \"US\", radius: $radius, coordinate: {lat: $lat, lng: $lng}}\n    )\n    filteredLocations: entries(\n      section: \"locations\"\n      limit: $limit\n      offset: $offset\n      relatedTo: $related\n      locationMap: {unit: Miles, location: $location, country: \"US\", radius: $radius, coordinate: {lat: $lat, lng: $lng}}\n      orderBy: $orderBy\n    ) {\n      id\n      title\n      url\n      slug\n      ... on location_Entry {\n        map: locationMap {\n          lat\n          lng\n          distance\n          address\n          parts {\n            number\n            address\n            city\n            state\n            postcode\n          }\n        }\n        customLocation @markdown\n        locationEligibility {\n          eligibility\n        }\n        foodDistributionLink\n        foodDistributionFacebookLink\n        foodDistributionPhoneNumber\n        foodDistributionInterval\n        foodDistributionDateTimes(orderBy: \"date asc\") {\n          ... on foodDistributionDateTimesBlock_Entry {\n            date @formatDateTime(format: \"M j\")\n            startTime @formatDateTime(format: \"g:ia\")\n            endTime @formatDateTime(format: \"g:ia\")\n          }\n        }\n        customFoodDistributionTimes @markdown\n        programs {\n          id\n          title\n          slug\n          url\n        }\n        additionalPrograms {\n          programTitle\n        }\n        featuredImage {\n          id\n          title\n          ... on generalUploads_Asset {\n            accessibilityText\n            mimeType\n          }\n          imageUrlLgWebp: url @transform(mode: \"crop\", width: $widthLg, height: $heightLg, format: \"webp\")\n          imageUrlLg: url @transform(mode: \"crop\", width: $widthLg, height: $heightLg)\n          imageUrlSmWebp: url @transform(mode: \"crop\", width: $widthSm, height: $heightSm, format: \"webp\")\n          imageUrlSm: url @transform(mode: \"crop\", width: $widthSm, height: $heightSm)\n          imageUrlLq: url @transform(mode: \"crop\", width: $widthLq, height: $heightLq)\n        }\n      }\n    }\n  }\n",
+        "variables": {
+          "widthLg": 500,
+          "heightLg": 400,
+          "widthSm": 600,
+          "heightSm": 300,
+          "widthLq": 50,
+          "heightLq": 40,
+          "lat": 43,
+          "lng": -97,
+          "radius": 999,
+          "orderBy": "title asc",
+          "limit": 1000,
+          "offset": 0,
+          "related": []
+        }
+      }
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      },
+      {
+        "name": "json_path",
+        "path": [
+          "data",
+          "filteredLocations"
+        ]
+      }
+    ]
+  },
+  {
+    "mailAddressState": "TN",
+    "mailAddressCity": "Nashville",
+    "mailAddressZip": "37228",
+    "mailAddressLatitude": "36.199259",
+    "mailAddressLongitude": "-86.793989",
+    "entityId": "52",
+    "organizationId": "55",
+    "fullName": "Second Harvest Food Bank of Middle Tennessee",
+    "agencyUrl": "https://www.secondharvestmidtn.org/get-help/",
+    "url": "www.secondharvestmidtn.org",
+    "generator": {
+      "name": "default",
+      "source": "https://dashboard.storelocatorplus.com/2harvestmidtn_at_gmail_dot_com/wp-json/myslp/v2/locations-map/search",
+      "params": {
+        "_jsonp": "initMySLP",
+        "action": "csl_ajax_onload",
+        "api_key": "myslp.39094dd596b3be04e1e9ce76d5dbec84e5ad43afee8e8c11f708e5ad80bd655b",
+        "callback": "initMySLP",
+        "lat": "36.154862",
+        "lng": "-86.801359"
+      }
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "regex",
+        "regex": "^/\\*\\*/\\s*initMySLP\\(\\s*(\\{[\\s\\S]*\\})\\s*\\)\\s*$",
+        "regex_flags": "s",
+        "regex_group": 1
+      },
+      {
+        "name": "json"
+      },
+      {
+        "name": "json_path",
+        "path": [
+          "data",
+          "response"
+        ]
+      }
+    ]
+  },
+  {
+    "mailAddressState": "NC",
+    "mailAddressCity": "Winston-Salem",
+    "mailAddressZip": "27105",
+    "mailAddressLatitude": "36.128325",
+    "mailAddressLongitude": "-80.2485",
+    "entityId": "89",
+    "organizationId": "97",
+    "fullName": "Second Harvest Food Bank of Northwest North Carolina",
+    "agencyUrl": "https://www.secondharvestnwnc.org//find-help",
+    "url": "www.secondharvestnwnc.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://cdn.storelocatorwidgets.com/json/l4aFjfj1hMvBFC65BlSO0hnGlxlEzEA4"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "regex",
+        "regex": "^slw\\(\\s*(\\{[\\s\\S]*\\})\\s*\\)\\s*;?\\s*$",
+        "regex_flags": "s",
+        "regex_group": 1
+      },
+      {
+        "name": "json"
+      },
+      {
+        "name": "json_path",
+        "path": [
+          "stores"
+        ]
+      }
+    ]
+  },
+  {
+    "mailAddressState": "TX",
+    "mailAddressCity": "Abilene",
+    "mailAddressZip": "79603",
+    "mailAddressLatitude": "32.454207",
+    "mailAddressLongitude": "-99.794693",
+    "entityId": "90",
+    "organizationId": "98",
+    "fullName": "Food Bank of West Central Texas",
+    "agencyUrl": "https://fbwct.org/food-pantry-and-meal-site-schedules/",
+    "url": "fbwct.org/",
+    "generator": {
+      "name": "default",
+      "use_realistic_headers": false,
+      "max_retry_times": 5,
+      "source": "https://www.google.com/maps/d/viewer?mid=15jt8EPmUrPHFQsKt6ESIDVGXgz3fqVs",
+      "headers": {
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.9",
+        "Cache-Control": "no-cache",
+        "Pragma": "no-cache",
+        "Referer": "https://www.google.com/",
+        "Upgrade-Insecure-Requests": "1",
+        "Sec-Fetch-Dest": "document",
+        "Sec-Fetch-Mode": "navigate",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-User": "?1",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+      }
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "html",
+        "xpath": "//script[@nonce][contains(., '_pageData')][1]/text()"
+      },
+      {
+        "name": "regex",
+        "regex": "var\\s+_pageData\\s*=\\s*\"([\\s\\S]*?)\";",
+        "regex_flags": "s",
+        "regex_group": null
+      },
+      {
+        "name": "json"
+      },
+      {
+        "name": "mymaps"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "SC",
+    "mailAddressCity": "Columbia",
+    "mailAddressZip": "29201",
+    "mailAddressLatitude": "33.962821",
+    "mailAddressLongitude": "-80.989701",
+    "entityId": "19",
+    "organizationId": "20",
+    "fullName": "Harvest Hope Food Bank",
+    "agencyUrl": "https://www.harvesthope.org/get-help",
+    "url": "www.harvesthope.org",
+    "generator": {
+      "name": "default",
+      "source": "https://www.harvesthope.org/partner-agencies"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "TN",
+    "mailAddressCity": "Maryville",
+    "mailAddressZip": "37801",
+    "mailAddressLatitude": "35.770832",
+    "mailAddressLongitude": "-83.993858",
+    "entityId": "39",
+    "organizationId": "41",
+    "fullName": "Second Harvest Food Bank of East Tennessee",
+    "agencyUrl": "https://secondharvestetn.org/find-a-food-pantry/",
+    "url": "secondharvestetn.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://www.google.com/maps/d/viewer?mid=16ei4cVPP4mTcCaEocPz3eV4Pd3qm5ZA"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "html",
+        "xpath": "//script[@nonce][contains(., '_pageData')][1]/text()"
+      },
+      {
+        "name": "regex",
+        "regex": "var\\s+_pageData\\s*=\\s*\"([\\s\\S]*?)\";",
+        "regex_flags": "s",
+        "regex_group": null
+      },
+      {
+        "name": "json"
+      },
+      {
+        "name": "mymaps"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "MO",
+    "mailAddressCity": "St. Joseph",
+    "mailAddressZip": "64505",
+    "mailAddressLatitude": "39.783241",
+    "mailAddressLongitude": "-94.848303",
+    "entityId": "148",
+    "organizationId": "193",
+    "fullName": "Second Harvest Community Food Bank",
+    "agencyUrl": "https://www.shcfb.org/find-food",
+    "url": "www.shcfb.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://www.google.com/maps/d/viewer?mid=1T4oBxH4blsVJiUXazB-jsQCRHeRd4sA"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "html",
+        "xpath": "//script[@nonce][contains(., '_pageData')][1]/text()"
+      },
+      {
+        "name": "regex",
+        "regex": "var\\s+_pageData\\s*=\\s*\"([\\s\\S]*?)\";",
+        "regex_flags": "s",
+        "regex_group": null
+      },
+      {
+        "name": "json"
+      },
+      {
+        "name": "mymaps"
+      }
+    ]
+  },
+
+  {
+    "mailAddressState": "NC",
+    "mailAddressCity": "Raleigh",
+    "mailAddressZip": "27603",
+    "mailAddressLatitude": "35.769927",
+    "mailAddressLongitude": "-78.666251",
+    "entityId": "188",
+    "organizationId": "309",
+    "fullName": "Inter-Faith Food Shuttle",
+    "agencyUrl": "https://www.foodshuttle.org/findfood",
+    "url": "www.foodshuttle.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://www.google.com/maps/d/viewer?mid=1ufqSw9bSrfF9HltumRDL6biGzmvgWFc"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "html",
+        "xpath": "//script[@nonce][contains(., '_pageData')][1]/text()"
+      },
+      {
+        "name": "regex",
+        "regex": "var\\s+_pageData\\s*=\\s*\"([\\s\\S]*?)\";",
+        "regex_flags": "s",
+        "regex_group": null
+      },
+      {
+        "name": "json"
+      },
+      {
+        "name": "mymaps"
+      }
+    ]
+  },
+
+  {
+    "mailAddressState": "HI",
+    "mailAddressCity": "Honolulu",
+    "mailAddressZip": "96819",
+    "mailAddressLatitude": "21.336248",
+    "mailAddressLongitude": "-157.8943",
+    "entityId": "34",
+    "organizationId": "36",
+    "fullName": "Hawaii Foodbank, Inc.",
+    "agencyUrl": "https://hawaiifoodbank.org/help/",
+    "url": "hawaiifoodbank.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://www.google.com/maps/d/viewer?mid=1U3q_j27iwLeAJqzyMuMptu6U8QIdh6vx"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "html",
+        "xpath": "//script[@nonce][contains(., '_pageData')][1]/text()"
+      },
+      {
+        "name": "regex",
+        "regex": "var\\s+_pageData\\s*=\\s*\"([\\s\\S]*?)\";",
+        "regex_flags": "s",
+        "regex_group": null
+      },
+      {
+        "name": "json"
+      },
+      {
+        "name": "mymaps"
+      }
+    ]
+  },
+
+  {
+    "mailAddressState": "OH",
+    "mailAddressCity": "Cleveland",
+    "mailAddressZip": "44110",
+    "mailAddressLatitude": "41.552355",
+    "mailAddressLongitude": "-81.590077",
+    "entityId": "17",
+    "organizationId": "18",
+    "fullName": "Greater Cleveland Food Bank",
+    "agencyUrl": "https://www.greaterclevelandfoodbank.org/get-help/map",
+    "url": "www.greaterclevelandfoodbank.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://www.greaterclevelandfoodbank.org/get-help/find-food"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "html",
+        "xpath": "//script[contains(., 'locations_json')][1]/text()"
+      },
+      {
+        "name": "regex",
+        "regex": "\\bvar\\s+locations_json\\s*=\\s*(\\[[\\s\\S]*?\\])\\s*;",
+        "regex_flags": "s",
+        "regex_group": null
+      },
+      {
+        "name": "json"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "NY",
+    "mailAddressCity": "Brooklyn",
+    "mailAddressZip": "11232",
+    "mailAddressLatitude": "40.648526",
+    "mailAddressLongitude": "-74.01931",
+    "entityId": "182",
+    "organizationId": "297",
+    "fullName": "City Harvest",
+    "agencyUrl": "https://www.cityharvest.org/food-map/",
+    "url": "www.cityharvest.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://nfa-admin.foodmedcenter.org/file-by-filename/foodPantriesOpen.json"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "json"
+      }
+    ]
+  },
+  {
+    "mailAddressState": "CA",
+    "mailAddressCity": "Salinas",
+    "mailAddressZip": "93907",
+    "mailAddressLatitude": "36.683787",
+    "mailAddressLongitude": "-121.665467",
+    "entityId": "166",
+    "organizationId": "225",
+    "fullName": "Food Bank for Monterey County",
+    "agencyUrl": "https://foodbankformontereycounty.org/food-assistance/",
+    "url": "foodbankformontereycounty.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://foodbankformontereycounty.org/food-assistance",
+      "headers": {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+      }
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "html",
+        "xpath": "//script[@type='text/javascript'][contains(., 'mapsvg_options')][1]/text()"
+      },
+      {
+        "name": "regex",
+        "regex": "\\bvar\\s+mapsvg_options\\s*=\\s*(\\{[\\s\\S]*\\})\\s*;",
+        "regex_flags": "s",
+        "regex_group": null
+      },
+      {
+        "name": "json"
+      },
+      {
+        "name": "json_path",
+        "path": [
+          "data_db",
+          "objects"
+        ]
+      }
+    ]
+  },
+  {
+    "mailAddressState": "GA",
+    "mailAddressCity": "Valdosta",
+    "mailAddressZip": "31601",
+    "mailAddressLatitude": "30.782005",
+    "mailAddressLongitude": "-83.287677",
+    "entityId": "179",
+    "organizationId": "291",
+    "fullName": "Second Harvest of South Georgia",
+    "agencyUrl": "https://feedingsga.org/find-help/",
+    "url": "feedingsga.org/",
+    "generator": {
+      "name": "default",
+      "source": "https://locatestore.com/x-eHTh"
+    },
+    "evaluator": {
+      "name": "default"
+    },
+    "parser": [
+      {
+        "name": "html",
+        "xpath": "//div[@id='root']/following::script[contains(., 'window._stores')][1]/text()"
+      },
+      {
+        "name": "regex",
+        "regex": "window\\._stores\\s*=\\s*(\\{[\\s\\S]*\\})\\s*;",
+        "regex_flags": "s",
+        "regex_group": 1
+      },
+      {
+        "name": "json"
+      },
+      {
+        "name": "json_path",
+        "path": [
+          "features"
+        ]
+      }
+    ]
+  }
+]

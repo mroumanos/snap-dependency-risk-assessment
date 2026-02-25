@@ -1,3 +1,10 @@
+"""NHGIS CSV ingestion.
+
+NHGIS exports include a first row of column IDs and a second row of human-
+readable descriptions. This loader parses those rows, loads tabular data
+to Postgres, and applies column comments for analyst readability.
+"""
+
 import logging
 import pandas as pd
 from utils.db import get_conn
@@ -5,7 +12,7 @@ from sqlalchemy import text
 
 
 def parse_nhgis_csv(file_path: str) -> tuple[pd.DataFrame, dict[str, str]]:
-    """Load NHGIS CSV where row 1 has column ids and row 2 has descriptions."""
+    """Parse one NHGIS CSV into data rows and a `{column: description}` map."""
     df = pd.read_csv(file_path, header=None, dtype=str)
     if len(df.index) < 2:
         logging.error(f"NHGIS file {file_path} is missing column description row")
@@ -21,13 +28,13 @@ def parse_nhgis_csv(file_path: str) -> tuple[pd.DataFrame, dict[str, str]]:
 
 
 def quote_ident(identifier: str) -> str:
-    """Safely quote identifiers for SQL."""
+    """Safely quote SQL identifiers."""
     escaped = identifier.replace('"', '""')
     return f'"{escaped}"'
 
 
 def apply_column_comments(conn, table_name: str, column_comments: dict[str, str]) -> None:
-    """Apply COMMENT statements for each column using the provided descriptions."""
+    """Apply Postgres column comments to preserve NHGIS metadata semantics."""
     quoted_table = quote_ident(table_name)
     for column, description in column_comments.items():
         if pd.isna(description):
@@ -62,7 +69,7 @@ sources = {
 
 
 def merge_nhgis_files(file_paths: list[str]) -> tuple[pd.DataFrame, dict[str, str]]:
-    """Parse and horizontally merge NHGIS CSVs on the first column (GISJOIN)."""
+    """Horizontally merge multiple NHGIS files using the first column as key."""
     combined_df: pd.DataFrame | None = None
     combined_comments: dict[str, str] = {}
 
@@ -83,7 +90,7 @@ def merge_nhgis_files(file_paths: list[str]) -> tuple[pd.DataFrame, dict[str, st
             logger.error(f"Join column {join_col} not found in existing data; skipping {path}")
             continue
 
-        # Ensure unique column names before merging (except join column).
+        # Keep merged columns unique across files while preserving join column.
         rename_map = {}
         for col in df.columns[1:]:
             new_col = col
@@ -108,7 +115,7 @@ def merge_nhgis_files(file_paths: list[str]) -> tuple[pd.DataFrame, dict[str, st
 
 
 async def run():
-    """Run the full ETL process for SNAP retailers"""
+    """Load configured NHGIS extracts into raw SQL tables with column comments."""
     logger.info("Starting ETL process for remotely stored data...")
     
     for name, source in sources.items():
